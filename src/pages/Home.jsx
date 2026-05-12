@@ -38,7 +38,8 @@ const Home = () => {
     <div className="home-page page-fade">
       {/* Hero Section */}
       <section className="hero" style={{
-        height: '100vh',
+        minHeight: '100dvh',
+        padding: '100px 0 120px',
         background: 'url("/hero-bg.png") no-repeat center center/cover',
         backgroundAttachment: 'scroll',
         position: 'relative',
