@@ -32,8 +32,6 @@ const Navbar = () => {
             src={logo} 
             alt="NICE TOOLS" 
             style={{ 
-              filter: (!scrolled && isTransparentPage) ? 'brightness(0) invert(1)' : 'none', 
-              WebkitFilter: (!scrolled && isTransparentPage) ? 'brightness(0) invert(1)' : 'none',
               transition: 'var(--transition)'
             }}
           />
