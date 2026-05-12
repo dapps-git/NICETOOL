@@ -198,7 +198,7 @@ export const translations = {
     flexibleMfg: "تصنيع مرن",
     expertTeam: "فريق خبير",
     prototypeDev: "تطوير النماذج الأولية",
-    isoStandards: "معايير ISO/ASME/ANSI",
+    isoStandards: "معايير ISO/ASME/ANSI العالمية",
     vastVarietyDesc: "تقدم نايس تول مجموعة واسعة من ماكينات CNC التي توفر دقة كبيرة ومرونة مذهلة ومخرجات عالية الجودة بدعم هندسي محترف.",
     coreCncServicesTitle: "خدمات تصنيع CNC",
     quickTurnProto: "نماذج أولية سريعة الدوران",
