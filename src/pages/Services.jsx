@@ -25,7 +25,7 @@ const Services = () => {
 
       <section className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '30px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
             {serviceCategories.map((cat, i) => (
               <div key={i} style={{
                 border: '1px solid #f0f0f0',
@@ -56,9 +56,9 @@ const Services = () => {
           <p style={{ maxWidth: '750px', marginInline: 'auto', color: 'var(--grey)', marginBottom: '40px', fontSize: '15px' }}>
             {t.integratedText}
           </p>
-          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
-            <span className="btn btn-outline" style={{ cursor: 'default', padding: '10px 20px', fontSize: '13px' }}>{t.solidWorksExpertise}</span>
-            <span className="btn btn-outline" style={{ cursor: 'default', padding: '10px 20px', fontSize: '13px' }}>{t.mastercamReady}</span>
+          <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <span className="btn btn-outline-dark" style={{ cursor: 'default', padding: '10px 20px', fontSize: '13px' }}>{t.solidWorksExpertise}</span>
+            <span className="btn btn-outline-dark" style={{ cursor: 'default', padding: '10px 20px', fontSize: '13px' }}>{t.mastercamReady}</span>
           </div>
         </div>
       </section>
