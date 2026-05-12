@@ -29,7 +29,7 @@ const About = () => {
                 {t.missionText2}
               </p>
             </div>
-            <div style={{ background: '#f9f9f9', padding: '40px', borderRadius: '10px', border: '1px solid #eee' }}>
+            <div style={{ background: '#f9f9f9', padding: '40px', border: '1px solid #eee' }}>
               <h3 style={{ marginBottom: '20px', color: 'var(--primary)', fontSize: '20px' }}>{t.coreStandards}</h3>
               <ul style={{ lineHeight: 2.2, fontWeight: 600, fontSize: '14px', listStyle: 'none', padding: 0 }}>
                 <li>✓ {t.isoQuality}</li>

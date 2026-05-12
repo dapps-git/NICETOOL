@@ -31,7 +31,6 @@ const Industries = () => {
                 background: 'var(--dark)',
                 color: '#fff',
                 padding: '40px 30px',
-                borderRadius: '8px',
                 textAlign: 'center'
               }}>
                 <div style={{ fontSize: '40px', marginBottom: '15px' }}>{s.img}</div>

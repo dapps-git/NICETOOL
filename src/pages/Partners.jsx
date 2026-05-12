@@ -15,16 +15,16 @@ const Clients = () => {
   const t = translations[lang];
 
   const partners = [
-    { img: img1 },
-    { img: img2 },
-    { img: img3 },
-    { img: img4 },
-    { img: img5 },
-    { img: img6 },
-    { img: img7 },
-    { img: img8 }
+    { img: img1, name: t.client1, desc: t.client1Desc },
+    { img: img2, name: t.client2, desc: t.client2Desc },
+    { img: img3, name: t.client3, desc: t.client3Desc },
+    { img: img4, name: t.client4, desc: t.client4Desc },
+    { img: img5, name: t.client5, desc: t.client5Desc },
+    { img: img6, name: t.client6, desc: t.client6Desc },
+    { img: img7, name: t.client7, desc: t.client7Desc },
+    { img: img8, name: t.client8, desc: t.client8Desc }
   ];
-
+ 
   return (
     <div className="clients-page page-fade">
       {/* Sub-Hero */}
@@ -38,21 +38,32 @@ const Clients = () => {
       {/* Clients Grid */}
       <section className="section" style={{ paddingBottom: '100px' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px' }}>
+          <div className="mobile-2-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
             {partners.map((partner, i) => (
               <div key={i} style={{
                 background: '#fff',
-                padding: '40px 20px',
-                borderRadius: '12px',
+                padding: '30px',
                 border: '1px solid #eee',
                 textAlign: 'center',
                 transition: 'var(--transition)',
                 boxShadow: '0 5px 15px rgba(0,0,0,0.02)',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                flexDirection: 'column',
+                alignItems: 'center'
               }} className="partner-card">
-                <img src={partner.img} alt="Client Logo" style={{ maxWidth: '100%', maxHeight: '80px', objectFit: 'contain' }} />
+                <div style={{ 
+                  height: '100px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center', 
+                  marginBottom: '20px' 
+                }}>
+                  <img src={partner.img} alt={partner.name} style={{ maxWidth: '100%', maxHeight: '80px', objectFit: 'contain' }} />
+                </div>
+                <h3 style={{ fontSize: '18px', marginBottom: '10px', color: 'var(--primary)' }}>{partner.name}</h3>
+                <p style={{ color: 'var(--grey)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>
+                  {partner.desc}
+                </p>
               </div>
             ))}
           </div>

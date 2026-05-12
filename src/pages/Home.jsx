@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
+import img1 from '../assets/image.png';
+import img2 from '../assets/image copy.png';
+import img3 from '../assets/image copy 2.png';
+import img4 from '../assets/image copy 3.png';
 
 const StatCounter = ({ end, duration = 2000, suffix = "", lang }) => {
   const [count, setCount] = useState(0);
@@ -110,81 +114,134 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="section text-center" style={{ textAlign: 'center', padding: '80px 0 40px' }}>
+      {/* Intro / About Section */}
+      <section className="section bg-light-grey" style={{ background: '#fcfcfc', padding: '100px 0' }}>
         <div className="container">
-          <h2 style={{ fontSize: '32px', marginBottom: '20px', fontWeight: 700 }}>{t.whoWeAre}</h2>
-          <div style={{ width: '60px', height: '4px', background: 'var(--primary)', margin: '0 auto 30px' }}></div>
-          <p style={{ fontSize: '17px', lineHeight: '1.8', maxWidth: '900px', margin: '0 auto', color: 'var(--grey)' }}>
-            {t.introText}
-          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'center' }}>
+            <div>
+              <h2 style={{ fontSize: '36px', marginBottom: '25px', fontWeight: 800 }}>{t.whoWeAre}</h2>
+              <div style={{ width: '60px', height: '4px', background: 'var(--primary)', marginBottom: '30px' }}></div>
+              <p style={{ fontSize: '18px', lineHeight: '1.8', color: 'var(--dark)', marginBottom: '20px', fontWeight: 500 }}>
+                {t.advancedCncDesc}
+              </p>
+              <p style={{ fontSize: '16px', lineHeight: '1.7', color: 'var(--grey)' }}>
+                {t.vastVarietyDesc}
+              </p>
+            </div>
+            <div style={{ position: 'relative' }}>
+              <img src="/cnc.png" alt="CNC Machining" style={{ width: '100%', boxShadow: '20px 20px 0 var(--primary)', objectFit: 'cover', height: '400px' }} />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Quick Services Grid */}
-      <section className="section bg-light-grey" style={{ background: '#fcfcfc', padding: '40px 0 80px' }}>
+      {/* Capabilities Section */}
+      <section className="section bg-dark text-white" style={{ background: '#111', padding: '100px 0' }}>
+        <div className="container">
+          <h2 style={{ fontSize: '32px', marginBottom: '50px', fontWeight: 800, textAlign: 'center' }}>{t.machiningCapabilitiesTitle}</h2>
+          
+          <div className="capabilities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
+            {/* Processes */}
+            <div>
+              <h3 style={{ color: 'var(--primary)', marginBottom: '25px', borderBottom: '1px solid #333', paddingBottom: '10px' }}>{t.processesTitle}</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                {t.processesList.map((p, i) => (
+                  <div key={i} className="process-item" style={{ fontSize: '14px', color: '#ccc' }}>• {p}</div>
+                ))}
+              </div>
+            </div>
+
+            {/* Technical Specs & Materials */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+              <div>
+                <h3 style={{ color: 'var(--primary)', marginBottom: '25px', borderBottom: '1px solid #333', paddingBottom: '10px' }}>{t.technicalSpecsTitle}</h3>
+                <p style={{ color: '#fff', fontWeight: 600, marginBottom: '10px' }}>{t.tolerances}</p>
+                <div style={{ marginTop: '20px' }}>
+                  <h4 style={{ fontSize: '14px', color: '#888', textTransform: 'uppercase', marginBottom: '10px' }}>{t.machineryAxesTitle}</h4>
+                  <p style={{ color: '#fff' }}>{t.axesList}</p>
+                </div>
+              </div>
+              <div>
+                <h3 style={{ color: 'var(--primary)', marginBottom: '15px', borderBottom: '1px solid #333', paddingBottom: '10px' }}>{t.materialsTitle}</h3>
+                <p style={{ color: '#ccc', fontSize: '13px', lineHeight: 1.6 }}>{t.materialsList}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits & Machine Shop */}
+      <section className="section" style={{ padding: '100px 0' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '80px' }}>
+            <div>
+              <h2 style={{ fontSize: '28px', marginBottom: '30px', fontWeight: 800 }}>{t.benefitsTitle}</h2>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {[t.reducedLabor, t.isoStandards, t.fastProduction, t.highPrecision, t.customSpecs].map((b, i) => (
+                  <li key={i} style={{ marginBottom: '15px', display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '15px' }}>
+                    <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>✓</span> {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="machine-shop-box" style={{ background: 'var(--dark)', color: '#fff', padding: '50px' }}>
+              <h2 style={{ fontSize: '28px', marginBottom: '20px', color: 'var(--primary)' }}>{t.machineShopTitle}</h2>
+              <p style={{ fontSize: '16px', lineHeight: '1.8', opacity: 0.9 }}>
+                {t.shopDesc}
+              </p>
+              <div style={{ marginTop: '30px' }}>
+                <Link to="/contact" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>{t.contactUs}</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Clients Section */}
+      <section className="section bg-light-grey" style={{ padding: '100px 0', background: '#fcfcfc' }}>
         <div className="container text-center">
-          <h2 style={{ fontSize: '30px', marginBottom: '50px', fontWeight: 700 }}>{t.coreExpertise}</h2>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px',
-            direction: lang === 'ar' ? 'rtl' : 'ltr'
+          <h2 style={{ fontSize: '32px', marginBottom: '15px', fontWeight: 800 }}>{t.topClientsTitle}</h2>
+          <div style={{ width: '60px', height: '4px', background: 'var(--primary)', margin: '0 auto 50px' }}></div>
+          
+          <div className="mobile-2-col" style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+            gap: '30px',
+            marginBottom: '50px'
           }}>
             {[
-              { 
-                title: lang === 'en' ? 'CNC Machining' : 'تشغيل المعادن CNC', 
-                img: '/cnc.png',
-                text: lang === 'en' ? 'High-precision CNC milling and lathe work for aerospace and medical sectors.' : 'أعمال الفرز والمخرطة CNC عالية الدقة لقطاعات الفضاء والأجهزة الطبية.' 
-              },
-              { 
-                title: lang === 'en' ? 'Tooling & Dies' : 'الأدوات والقوالب', 
-                img: '/molds.png',
-                text: lang === 'en' ? 'Specialized toolmaking and die manufacturing with micron-level tolerances.' : 'صناعة الأدوات المتخصصة وتصنيع القوالب بتفاوتات دقيقة جداً.' 
-              },
-              { 
-                title: lang === 'en' ? 'Plant Maintenance' : 'صيانة المصانع', 
-                img: '/lathe.png',
-                text: lang === 'en' ? 'Comprehensive maintenance and repair services for industrial facilities.' : 'خدمات الصيانة والإصلاح الشاملة للمرافق الصناعية.' 
-              },
-              { 
-                title: lang === 'en' ? 'Engineering Design' : 'التصميم الهندسي', 
-                img: '/design.png',
-                text: lang === 'en' ? 'SolidWorks & Mastercam expertise for advanced machinery prototyping.' : `${t.solidWorksExpertise} و ${t.mastercamReady} لنماذج الآلات المتقدمة.` 
-              }
-            ].map((s, i) => (
-              <div key={i} style={{
-                position: 'relative',
-                height: '350px',
-                borderRadius: '12px',
-                overflow: 'hidden',
-                cursor: 'pointer',
-                background: `url("${s.img}") no-repeat center center/cover`,
+              { id: 1, name: t.client1, desc: t.client1Desc, img: img1 },
+              { id: 2, name: t.client2, desc: t.client2Desc, img: img2 },
+              { id: 3, name: t.client3, desc: t.client3Desc, img: img3 },
+              { id: 4, name: t.client4, desc: t.client4Desc, img: img4 }
+            ].map((client) => (
+              <div key={client.id} style={{
+                background: '#fff',
+                padding: '30px',
+                border: '1px solid #eee',
                 transition: 'var(--transition)',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-              }} onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-10px)'}
-                 onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
-                <div style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  background: 'linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.2))',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-end',
-                  padding: '30px',
-                  textAlign: 'left',
-                  direction: 'ltr' /* Ensure text flow is readable in the overlay */
+                textAlign: 'center'
+              }} className="client-card-home">
+                <div style={{ 
+                  height: '80px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  marginBottom: '20px'
                 }}>
-                  <h3 style={{ color: '#fff', marginBottom: '10px', fontSize: '22px', fontWeight: 700 }}>{s.title}</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '14px', lineHeight: 1.5, margin: 0 }}>{s.text}</p>
+                  <img src={client.img} alt={client.name} style={{ maxWidth: '100%', maxHeight: '60px', objectFit: 'contain' }} />
                 </div>
+                <h3 style={{ fontSize: '18px', marginBottom: '10px', color: 'var(--primary)' }}>{client.name}</h3>
+                <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
+                  {client.desc}
+                </p>
               </div>
             ))}
           </div>
-          <Link to="/services" className="btn btn-primary" style={{ marginTop: '50px', padding: '12px 30px' }}>{t.viewServices}</Link>
+          
+          <Link to="/clients" className="btn btn-outline-dark" style={{ padding: '12px 30px' }}>
+            {t.viewMoreClients}
+          </Link>
         </div>
       </section>
 

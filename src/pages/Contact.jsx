@@ -61,7 +61,7 @@ const Contact = () => {
               </div>
 
               {/* Company IDs */}
-              <div style={{ marginTop: '50px', padding: '25px', background: '#f9f9f9', borderRadius: '8px', border: '1px solid #eee' }}>
+              <div style={{ marginTop: '50px', padding: '25px', background: '#f9f9f9', border: '1px solid #eee' }}>
                 <p style={{ fontSize: '13px', marginBottom: '8px' }}><strong>VAT #:</strong> 310973524100003</p>
                 <p style={{ fontSize: '13px' }}><strong>C.R.:</strong> 4030421338</p>
               </div>
@@ -72,11 +72,11 @@ const Contact = () => {
               <h2 style={{ fontSize: '26px', marginBottom: '40px' }}>{t.inquiryForm}</h2>
               <form style={{ display: 'grid', gap: '15px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                  <input type="text" placeholder={t.fullName} style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd', fontSize: '14px' }} />
-                  <input type="email" placeholder={t.emailAddress} style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd', fontSize: '14px' }} />
+                  <input type="text" placeholder={t.fullName} style={{ width: '100%', padding: '12px', border: '1px solid #ddd', fontSize: '14px' }} />
+                  <input type="email" placeholder={t.emailAddress} style={{ width: '100%', padding: '12px', border: '1px solid #ddd', fontSize: '14px' }} />
                 </div>
-                <input type="text" placeholder={t.subject} style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd', fontSize: '14px' }} />
-                <textarea placeholder={t.messagePlaceholder} style={{ width: '100%', padding: '12px', borderRadius: '6px', border: '1px solid #ddd', minHeight: '120px', fontSize: '14px' }}></textarea>
+                <input type="text" placeholder={t.subject} style={{ width: '100%', padding: '12px', border: '1px solid #ddd', fontSize: '14px' }} />
+                <textarea placeholder={t.messagePlaceholder} style={{ width: '100%', padding: '12px', border: '1px solid #ddd', minHeight: '120px', fontSize: '14px' }}></textarea>
                 <button type="submit" className="btn btn-primary" style={{ padding: '15px', fontSize: '15px', fontWeight: 600 }}>{t.sendInquiry}</button>
               </form>
             </div>

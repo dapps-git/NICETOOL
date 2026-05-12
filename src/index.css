@@ -90,7 +90,7 @@ img {
 .btn {
     display: inline-block;
     padding: 16px 36px;
-    border-radius: 4px;
+    border-radius: 0;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -148,7 +148,7 @@ img {
 
 .navbar-transparent {
     background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
 }
 
 .navbar-transparent .nav-links a {
@@ -358,7 +358,7 @@ img {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     color: var(--white);
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .footer-bottom {
@@ -483,7 +483,7 @@ img {
         width: 25px;
         height: 2px;
         background: var(--primary);
-        border-radius: 2px;
+        border-radius: 0;
         transition: 0.3s;
     }
 
@@ -512,5 +512,59 @@ img {
 
     .sub-hero {
         height: 30vh;
+    }
+
+    /* Global Mobile Font Size Reduction (Excluding Hero) */
+    body:not(.hero-page) h1, 
+    section:not(.hero) h2, 
+    section:not(.hero) h3,
+    .sub-hero h1 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+    }
+
+    section:not(.hero) p,
+    .partner-card p,
+    .client-card-home p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+    section:not(.hero) h3 {
+        font-size: 1.1rem !important;
+    }
+
+    /* CNC Capabilities mobile adjustments */
+    .capabilities-grid {
+        gap: 30px !important;
+    }
+    .capabilities-grid h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 15px !important;
+    }
+    .capabilities-grid .process-item {
+        font-size: 12px !important;
+    }
+
+    /* Responsive Grid Utilities */
+    .mobile-2-col {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+    
+    .mobile-2-col .partner-card,
+    .mobile-2-col .client-card-home {
+        padding: 20px 10px !important;
+    }
+    
+    .mobile-2-col img {
+        max-height: 40px !important;
+    }
+    
+    .mobile-2-col h3 {
+        font-size: 13px !important;
+    }
+
+    .machine-shop-box {
+        padding: 30px 20px !important;
     }
 }

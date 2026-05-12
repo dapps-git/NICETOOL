@@ -31,7 +31,11 @@ const Navbar = () => {
           <img 
             src={logo} 
             alt="NICE TOOLS" 
-            style={{ filter: 'none', WebkitFilter: 'none' }}
+            style={{ 
+              filter: (!scrolled && isTransparentPage) ? 'brightness(0) invert(1)' : 'none', 
+              WebkitFilter: (!scrolled && isTransparentPage) ? 'brightness(0) invert(1)' : 'none',
+              transition: 'var(--transition)'
+            }}
           />
         </Link>
         <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>

@@ -30,7 +30,6 @@ const Services = () => {
               <div key={i} style={{
                 border: '1px solid #f0f0f0',
                 padding: '35px',
-                borderRadius: '10px',
                 transition: 'var(--transition)',
                 background: '#fff',
                 boxShadow: '0 5px 20px rgba(0,0,0,0.02)'
