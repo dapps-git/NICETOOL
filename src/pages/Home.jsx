@@ -7,6 +7,10 @@ import img1 from '../assets/image.png';
 import img2 from '../assets/image copy.png';
 import img3 from '../assets/image copy 2.png';
 import img4 from '../assets/image copy 3.png';
+import img5 from '../assets/image copy 4.png';
+import img6 from '../assets/image copy 5.png';
+import img7 from '../assets/image copy 6.png';
+import img8 from '../assets/image copy 7.png';
 
 const StatCounter = ({ end, duration = 2000, suffix = "", lang }) => {
   const [count, setCount] = useState(0);
@@ -311,7 +315,11 @@ const Home = () => {
               { id: 1, name: t.client1, desc: t.client1Desc, img: img1 },
               { id: 2, name: t.client2, desc: t.client2Desc, img: img2 },
               { id: 3, name: t.client3, desc: t.client3Desc, img: img3 },
-              { id: 4, name: t.client4, desc: t.client4Desc, img: img4 }
+              { id: 4, name: t.client4, desc: t.client4Desc, img: img4 },
+              { id: 5, name: t.client5, desc: t.client5Desc, img: img5 },
+              { id: 6, name: t.client6, desc: t.client6Desc, img: img6 },
+              { id: 7, name: t.client7, desc: t.client7Desc, img: img7 },
+              { id: 8, name: t.client8, desc: t.client8Desc, img: img8 }
             ].map((client) => (
               <div key={client.id} style={{
                 background: '#fff',
