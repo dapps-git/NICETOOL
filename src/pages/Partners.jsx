@@ -9,6 +9,12 @@ import img5 from '../assets/image copy 4.png';
 import img6 from '../assets/image copy 5.png';
 import img7 from '../assets/image copy 6.png';
 import img8 from '../assets/image copy 7.png';
+import img9 from '../assets/image copy 8.png';
+import img10 from '../assets/image copy 9.png';
+import img11 from '../assets/image copy 10.png';
+import img12 from '../assets/image copy 12.png';
+import img13 from '../assets/image copy 13.png';
+import img14 from '../assets/image copy 14.png';
 
 const Clients = () => {
   const { lang } = useLanguage();
@@ -22,7 +28,13 @@ const Clients = () => {
     { img: img5, name: t.client5, desc: t.client5Desc },
     { img: img6, name: t.client6, desc: t.client6Desc },
     { img: img7, name: t.client7, desc: t.client7Desc },
-    { img: img8, name: t.client8, desc: t.client8Desc }
+    { img: img8, name: t.client8, desc: t.client8Desc },
+    { img: img9, name: t.client9, desc: t.client9Desc },
+    { img: img10, name: t.client10, desc: t.client10Desc },
+    { img: img11, name: t.client11, desc: t.client11Desc },
+    { img: img12, name: t.client12, desc: t.client12Desc },
+    { img: img13, name: t.client13, desc: t.client13Desc },
+    { img: img14, name: t.client14, desc: t.client14Desc }
   ];
  
   return (
@@ -38,7 +50,11 @@ const Clients = () => {
       {/* Clients Grid */}
       <section className="section" style={{ paddingBottom: '100px' }}>
         <div className="container">
-          <div className="mobile-2-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px' }}>
+          <div className="clients-grid" style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(1, 1fr)', 
+            gap: '30px' 
+          }}>
             {partners.map((partner, i) => (
               <div key={i} style={{
                 background: '#fff',
@@ -69,6 +85,19 @@ const Clients = () => {
           </div>
         </div>
       </section>
+      
+      <style>{`
+        @media (min-width: 992px) {
+          .clients-grid {
+            grid-template-columns: repeat(4, 1fr) !important;
+          }
+        }
+        @media (max-width: 991px) and (min-width: 600px) {
+          .clients-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
