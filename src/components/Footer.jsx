@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid" style={{ textAlign: lang === 'ar' ? 'right' : 'left' }}>
           <div className="footer-col">
-            <img src={logo} alt="NICE TOOLS" className="footer-logo" />
+            <img src={logo} alt="NICE TOOLS" style={{ height: 'auto', width: '150px', marginBottom: '20px' }} />
             <p style={{ fontSize: '13px', lineHeight: '1.7', color: '#bbb', marginTop: '15px' }}>
               {t.experts}
             </p>
