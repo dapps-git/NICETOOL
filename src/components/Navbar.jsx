@@ -28,10 +28,10 @@ const Navbar = () => {
     <nav className={navClass} dir="ltr">
       <div className="container nav-content">
         <Link to="/" className="logo">
-          <img 
-            src={logo} 
-            alt="NICE TOOLS" 
-            style={{ 
+          <img
+            src={logo}
+            alt="NICE TOOLS"
+            style={{
               transition: 'var(--transition)'
             }}
           />

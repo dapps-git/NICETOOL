@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
-import logo from '../assets/logo.png';
+import logo from '../assets/footer.png';
 
 const Footer = () => {
   const { lang } = useLanguage();
