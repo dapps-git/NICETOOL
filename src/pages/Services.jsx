@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
@@ -6,6 +6,14 @@ import { translations } from '../translations';
 const Services = () => {
   const { lang } = useLanguage();
   const t = translations[lang];
+
+  useEffect(() => {
+    document.title = lang === 'en' ? "Our Services | CNC Machining & Tooling KSA" : "خدماتنا | تشغيل CNC والقوالب بالسعودية";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', t.comprehensiveSolutions);
+    }
+  }, [lang, t.comprehensiveSolutions]);
 
   const services = [
     {

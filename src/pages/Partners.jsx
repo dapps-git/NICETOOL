@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 import img1 from '../assets/image.png';
@@ -19,6 +19,14 @@ import img14 from '../assets/image copy 14.png';
 const Clients = () => {
   const { lang } = useLanguage();
   const t = translations[lang];
+
+  useEffect(() => {
+    document.title = lang === 'en' ? "Our Clients | NICE TOOLS Trusted Partners" : "عملاؤنا | شركاء نايس تولز الموثوقون";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', lang === 'en' ? 'Trusted by industry leaders including Aramco, SABIC, and Saudi Airlines for precision manufacturing.' : 'موثوق به من قبل قادة الصناعة بما في ذلك أرامكو وسابك والخطوط السعودية للتصنيع الدقيق.');
+    }
+  }, [lang]);
 
   const partners = [
     { img: img1, name: t.client1, desc: t.client1Desc },

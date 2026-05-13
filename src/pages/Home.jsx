@@ -38,6 +38,21 @@ const StatCounter = ({ end, duration = 2000, suffix = "", lang }) => {
 const Home = () => {
   const { lang } = useLanguage();
   const t = translations[lang];
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    
+    // SEO Logic
+    document.title = lang === 'en' ? "NICE TOOLS | Precision CNC Machining & Manufacturing Saudi Arabia" : "نايس تولز | تصنيع CNC دقيق وحلول هندسية - السعودية";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', t.advancedCncDesc);
+    }
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, [lang, t.advancedCncDesc]);
 
   return (
     <div className="home-page page-fade">
@@ -116,9 +131,14 @@ const Home = () => {
       </section>
 
       {/* Intro / About Section */}
-      <section className="section bg-light-grey" style={{ background: '#fcfcfc', padding: '100px 0' }}>
+      <section className="section bg-light-grey" style={{ background: '#fcfcfc', padding: isMobile ? '40px 0' : '80px 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'center' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            gap: isMobile ? '30px' : '60px', 
+            alignItems: 'center' 
+          }}>
             <div>
               <h2 style={{ fontSize: '36px', marginBottom: '25px', fontWeight: 800 }}>{t.whoWeAre}</h2>
               <div style={{ width: '60px', height: '4px', background: 'var(--primary)', marginBottom: '30px' }}></div>
@@ -139,7 +159,7 @@ const Home = () => {
       {/* Capabilities Section */}
       <section className="section" style={{ 
         background: '#f8f9fa', 
-        padding: '120px 0',
+        padding: isMobile ? '40px 0' : '80px 0',
         position: 'relative',
         overflow: 'hidden',
         borderTop: '1px solid #eee',
@@ -163,63 +183,81 @@ const Home = () => {
             <div style={{ width: '80px', height: '4px', background: 'var(--primary)', margin: '20px auto' }}></div>
           </div>
           
-          <div className="capabilities-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px' }}>
-            {/* Processes */}
-            <div style={{ background: '#fff', padding: '40px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee' }}>
-              <h3 style={{ color: 'var(--primary)', marginBottom: '25px', borderBottom: '2px solid #f0f0f0', paddingBottom: '15px', fontWeight: 700 }}>{t.processesTitle}</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                {t.processesList.map((p, i) => (
-                  <div key={i} className="process-item" style={{ 
-                    fontSize: '14px', 
-                    color: 'var(--grey)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    fontWeight: 500
-                  }}>
-                    <span style={{ color: 'var(--primary)', fontSize: '20px' }}>•</span>
-                    {p}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Technical Specs & Materials */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-              <div style={{ background: '#fff', padding: '40px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee' }}>
-                <h3 style={{ color: 'var(--primary)', marginBottom: '25px', borderBottom: '2px solid #f0f0f0', paddingBottom: '15px', fontWeight: 700 }}>{t.technicalSpecsTitle}</h3>
-                <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '8px', borderLeft: '4px solid var(--primary)', marginBottom: '20px' }}>
-                  <p style={{ color: 'var(--dark)', fontWeight: 700, fontSize: '16px', margin: 0 }}>{t.tolerances}</p>
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '10px', fontWeight: 700 }}>{t.machineryAxesTitle}</h4>
-                  <p style={{ color: 'var(--dark)', fontWeight: 600, fontSize: '18px' }}>{t.axesList}</p>
-                </div>
-              </div>
-              
-              <div style={{ background: '#fff', padding: '40px', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid #eee' }}>
-                <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid #f0f0f0', paddingBottom: '15px', fontWeight: 700 }}>{t.materialsTitle}</h3>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                  {t.materialsList.split(', ').map((mat, i) => (
-                    <span key={i} style={{ 
-                      padding: '6px 12px', 
-                      background: '#f8f9fa', 
-                      border: '1px solid #eee', 
-                      borderRadius: '4px', 
-                      fontSize: '12px', 
+          <div style={{ 
+            background: '#fff', 
+            padding: isMobile ? '30px 20px' : '60px', 
+            borderRadius: '16px', 
+            boxShadow: '0 15px 50px rgba(0,0,0,0.06)', 
+            border: '1px solid #eee',
+            position: 'relative',
+            zIndex: 2
+          }}>
+            <div style={{ 
+              display: 'grid', 
+              gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', 
+              gap: isMobile ? '40px' : '60px' 
+            }}>
+              {/* Processes column */}
+              <div>
+                <h3 style={{ color: 'var(--primary)', marginBottom: '30px', borderBottom: '2px solid #f8f9fa', paddingBottom: '15px', fontWeight: 700, fontSize: '24px' }}>{t.processesTitle}</h3>
+                <div style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', 
+                  gap: isMobile ? '12px' : '18px' 
+                }}>
+                  {t.processesList.map((p, i) => (
+                    <div key={i} className="process-item" style={{ 
+                      fontSize: isMobile ? '14px' : '16px', 
                       color: 'var(--grey)',
-                      fontWeight: 600,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px'
-                    }}>{mat}</span>
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      fontWeight: 500
+                    }}>
+                      <span style={{ color: 'var(--primary)', fontWeight: '900', fontSize: '18px' }}>✓</span>
+                      {p}
+                    </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Technical & Materials column */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+                <div>
+                  <h3 style={{ color: 'var(--primary)', marginBottom: '25px', borderBottom: '2px solid #f8f9fa', paddingBottom: '15px', fontWeight: 700, fontSize: '20px' }}>{t.technicalSpecsTitle}</h3>
+                  <div style={{ background: '#fcfcfc', padding: '20px', borderRadius: '12px', borderLeft: '4px solid var(--primary)', marginBottom: '20px', border: '1px solid #f0f0f0' }}>
+                    <p style={{ color: 'var(--dark)', fontWeight: 700, fontSize: '16px', margin: 0 }}>{t.tolerances}</p>
+                  </div>
+                  <div>
+                    <h4 style={{ fontSize: '12px', color: '#888', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '10px', fontWeight: 700 }}>{t.machineryAxesTitle}</h4>
+                    <p style={{ color: 'var(--dark)', fontWeight: 600, fontSize: '18px' }}>{t.axesList}</p>
+                  </div>
+                </div>
+                
+                <div>
+                  <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid #f8f9fa', paddingBottom: '15px', fontWeight: 700, fontSize: '20px' }}>{t.materialsTitle}</h3>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                    {t.materialsList.split(', ').map((mat, i) => (
+                      <span key={i} style={{ 
+                        padding: '8px 14px', 
+                        background: '#fcfcfc', 
+                        border: '1px solid #eee', 
+                        borderRadius: '6px', 
+                        fontSize: '13px', 
+                        color: 'var(--grey)',
+                        fontWeight: 600,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px'
+                      }}>{mat}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div style={{ marginTop: '80px', textAlign: 'center' }}>
-            <Link to="/services" className="btn btn-primary" style={{ padding: '15px 40px', fontSize: '14px', fontWeight: 700 }}>
+          <div style={{ marginTop: isMobile ? '40px' : '80px', textAlign: 'center' }}>
+            <Link to="/services" className="btn btn-primary" style={{ padding: isMobile ? '12px 30px' : '15px 40px', fontSize: isMobile ? '12px' : '14px', fontWeight: 700 }}>
               {t.viewServices}
             </Link>
           </div>
@@ -227,9 +265,13 @@ const Home = () => {
       </section>
 
       {/* Benefits & Machine Shop */}
-      <section className="section" style={{ padding: '100px 0' }}>
+      <section className="section" style={{ padding: isMobile ? '40px 0' : '80px 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '80px' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            gap: isMobile ? '40px' : '80px' 
+          }}>
             <div>
               <h2 style={{ fontSize: '28px', marginBottom: '30px', fontWeight: 800 }}>{t.benefitsTitle}</h2>
               <ul style={{ listStyle: 'none', padding: 0 }}>
@@ -254,16 +296,16 @@ const Home = () => {
       </section>
 
       {/* Top Clients Section */}
-      <section className="section bg-light-grey" style={{ padding: '100px 0', background: '#fcfcfc' }}>
+      <section className="section bg-light-grey" style={{ padding: isMobile ? '40px 0' : '80px 0', background: '#fcfcfc' }}>
         <div className="container text-center">
           <h2 style={{ fontSize: '32px', marginBottom: '15px', fontWeight: 800 }}>{t.topClientsTitle}</h2>
-          <div style={{ width: '60px', height: '4px', background: 'var(--primary)', margin: '0 auto 50px' }}></div>
+          <div style={{ width: '60px', height: '4px', background: 'var(--primary)', margin: isMobile ? '0 auto 30px' : '0 auto 50px' }}></div>
           
           <div className="mobile-2-col" style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-            gap: '30px',
-            marginBottom: '50px'
+            gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(auto-fit, minmax(250px, 1fr))', 
+            gap: isMobile ? '15px' : '30px',
+            marginBottom: isMobile ? '30px' : '50px'
           }}>
             {[
               { id: 1, name: t.client1, desc: t.client1Desc, img: img1 },
@@ -302,60 +344,76 @@ const Home = () => {
       </section>
 
       {/* Contact & Map Section */}
-      <section className="section" style={{ padding: '0', borderTop: '1px solid #eee' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-          {/* Left: Contact Info */}
-          <div style={{ padding: '80px 10%', background: '#fff' }}>
-            <h2 style={{ fontSize: '32px', marginBottom: '40px', fontWeight: 800 }}>{t.contactUs}</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-              <div style={{ display: 'flex', gap: '20px' }}>
-                <div style={{ color: 'var(--primary)', marginTop: '5px' }}><MapPin size={22} /></div>
-                <div>
-                  <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.officeAddress}</h4>
-                  <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.6 }}>
-                    Jeddah - Al-Jawhara Dist.<br />
-                    Near Al-Jawhara Petrol Station<br />
-                    P.O.Box 126002 - Jeddah 21352
-                  </p>
+      <section className="section" style={{ background: '#fff', borderTop: '1px solid #eee' }}>
+        <div className="container">
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', 
+            gap: isMobile ? '40px' : '80px',
+            alignItems: 'start'
+          }}>
+            {/* Left: Contact Info */}
+            <div>
+              <h2 style={{ fontSize: isMobile ? '28px' : '36px', marginBottom: '30px', fontWeight: 800 }}>{t.contactUs}</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+                <div style={{ display: 'flex', gap: '20px' }}>
+                  <div style={{ color: 'var(--primary)', marginTop: '5px' }}><MapPin size={22} /></div>
+                  <div>
+                    <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.officeAddress}</h4>
+                    <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.6 }}>
+                      Jeddah - Al-Jawhara Dist.<br />
+                      Near Al-Jawhara Petrol Station<br />
+                      P.O.Box 126002 - Jeddah 21352
+                    </p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '20px' }}>
+                  <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Phone size={22} /></div>
+                  <div>
+                    <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.phone}</h4>
+                    <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
+                      <a href="tel:+966541802013" style={{ color: 'inherit', textDecoration: 'none' }}>054 180 2013</a>
+                    </p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '20px' }}>
+                  <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Mail size={22} /></div>
+                  <div>
+                    <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.emailInquiry}</h4>
+                    <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
+                      <a href="mailto:info@nicetoolsa.com" style={{ color: 'inherit', textDecoration: 'none' }}>info@nicetoolsa.com</a>
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div style={{ display: 'flex', gap: '20px' }}>
-                <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Phone size={22} /></div>
-                <div>
-                  <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.phone}</h4>
-                  <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
-                    <a href="tel:+966541802013" style={{ color: 'inherit', textDecoration: 'none' }}>054 180 2013</a>
-                  </p>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '20px' }}>
-                <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Mail size={22} /></div>
-                <div>
-                  <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.emailInquiry}</h4>
-                  <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
-                    <a href="mailto:info@nicetoolsa.com" style={{ color: 'inherit', textDecoration: 'none' }}>info@nicetoolsa.com</a>
-                  </p>
-                </div>
+              
+              <div style={{ marginTop: '40px' }}>
+                 <Link to="/contact" className="btn btn-primary" style={{ padding: '12px 30px' }}>
+                   {lang === 'en' ? 'Send Inquiry' : 'إرسال استفسار'}
+                 </Link>
               </div>
             </div>
-            
-            <div style={{ marginTop: '50px' }}>
-               <Link to="/contact" className="btn btn-primary">{lang === 'en' ? 'Send Inquiry' : 'إرسال استفسار'}</Link>
-            </div>
-          </div>
 
-          {/* Right: Map */}
-          <div style={{ height: 'auto', width: '100%', minHeight: '400px' }}>
-            <iframe
-              title="NICE TOOLS Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.7171439401!2d39.2458!3d21.4011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d1f0!2zSmVkZGFo!5e0!3m2!1sen!2ssa!4v1715243400000!5m2!1sen!2ssa"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            {/* Right: Map in a Card */}
+            <div style={{ 
+              height: isMobile ? '300px' : '400px', 
+              width: '100%', 
+              borderRadius: '16px', 
+              overflow: 'hidden', 
+              boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+              border: '1px solid #eee'
+            }}>
+              <iframe
+                title="NICE TOOLS Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.7171439401!2d39.2458!3d21.4011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d1f0!2zSmVkZGFo!5e0!3m2!1sen!2ssa!4v1715243400000!5m2!1sen!2ssa"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="eager" // Changed from lazy to eager for faster loading
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>

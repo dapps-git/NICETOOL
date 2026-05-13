@@ -70,7 +70,7 @@ img {
 }
 
 .section {
-    padding: 100px 0;
+    padding: clamp(40px, 8vw, 80px) 0;
     background: #ffffff;
 }
 
@@ -333,7 +333,7 @@ img {
 .footer {
     background: var(--dark);
     color: var(--light-grey);
-    padding: 100px 0 50px;
+    padding: 80px 0 40px;
 }
 
 .footer-grid {

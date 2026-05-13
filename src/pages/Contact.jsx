@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 import { MapPin, Phone, Mail } from 'lucide-react';
@@ -6,6 +6,14 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 const Contact = () => {
   const { lang } = useLanguage();
   const t = translations[lang];
+
+  useEffect(() => {
+    document.title = lang === 'en' ? "Contact Us | NICE TOOLS Jeddah KSA" : "اتصل بنا | نايس تولز جدة السعودية";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', lang === 'en' ? 'Get in touch with NICE TOOLS in Jeddah for precision CNC machining inquiries and technical support.' : 'تواصل مع نايس تولز في جدة لاستفسارات تشغيل CNC والدعم الفني.');
+    }
+  }, [lang]);
 
   return (
     <div className="contact-page page-fade">
@@ -85,17 +93,28 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section style={{ height: '400px', width: '100%', borderTop: '1px solid #eee' }}>
-        <iframe
-          title="NICE TOOLS Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.7171439401!2d39.2458!3d21.4011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d1f0!2zSmVkZGFo!5e0!3m2!1sen!2ssa!4v1715243400000!5m2!1sen!2ssa"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen=""
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-        ></iframe>
+      <section className="section" style={{ background: '#fcfcfc' }}>
+        <div className="container">
+          <div style={{ 
+            height: '400px', 
+            width: '100%', 
+            borderRadius: '16px', 
+            overflow: 'hidden', 
+            boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+            border: '1px solid #eee'
+          }}>
+            <iframe
+              title="NICE TOOLS Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3714.7171439401!2d39.2458!3d21.4011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d1f0!2zSmVkZGFo!5e0!3m2!1sen!2ssa!4v1715243400000!5m2!1sen!2ssa"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="eager"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
       </section>
     </div>
   );

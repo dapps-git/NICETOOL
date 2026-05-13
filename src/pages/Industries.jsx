@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 
 const Industries = () => {
   const { lang } = useLanguage();
   const t = translations[lang];
+
+  useEffect(() => {
+    document.title = lang === 'en' ? "Industries Served | NICE TOOLS Precision Manufacturing" : "الصناعات | نايس تولز للتصنيع الدقيق";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', lang === 'en' ? 'Delivering Precision Engineering Across Diverse Global Sectors including Medical, Energy, and Aerospace.' : 'تقديم الهندسة الدقيقة عبر قطاعات عالمية متنوعة تشمل الطب والطاقة والفضاء.');
+    }
+  }, [lang]);
 
   const industrySectors = [
     { 

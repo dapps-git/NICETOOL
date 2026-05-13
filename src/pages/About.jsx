@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 
 const About = () => {
   const { lang } = useLanguage();
   const t = translations[lang];
+
+  useEffect(() => {
+    document.title = lang === 'en' ? "About Us | NICE TOOLS Precision Engineering" : "من نحن | نايس تولز للهندسة الدقيقة";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', t.missionText);
+    }
+  }, [lang, t.missionText]);
 
   return (
     <div className="about-page page-fade">
