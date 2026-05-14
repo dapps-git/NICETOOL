@@ -43,11 +43,7 @@ const Navbar = () => {
             <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>
               {t.services}
             </Link>
-            <div className="dropdown-menu">
-              <Link to="/services#cnc-milling" onClick={() => setMobileMenuOpen(false)}>CNC Machining</Link>
-              <Link to="/services#tooling-dies" onClick={() => setMobileMenuOpen(false)}>Precision Tooling</Link>
-              <Link to="/services#plant-maintenance" onClick={() => setMobileMenuOpen(false)}>Maintenance</Link>
-            </div>
+
           </li>
           <li className="dropdown">
             <Link to="/industries" className={location.pathname === '/industries' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>

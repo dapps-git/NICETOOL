@@ -59,39 +59,21 @@ const IndustryDetail = () => {
             <ArrowLeft size={20} /> {lang === 'en' ? 'Back to All Industries' : 'العودة إلى جميع الصناعات'}
           </Link>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '60px', alignItems: 'center' }}>
-            <div style={{ order: lang === 'ar' ? 2 : 1 }}>
-              <h2 style={{ fontSize: '32px', marginBottom: '25px', fontWeight: 800 }}>{lang === 'en' ? 'Our Expertise' : 'خبرتنا'}</h2>
-              <p style={{ fontSize: '19px', lineHeight: '1.8', color: 'var(--dark)', marginBottom: '30px' }}>
-                {industryFull}
-              </p>
-              
-              <div style={{ background: 'var(--dark)', color: '#fff', padding: '40px', borderLeft: '5px solid var(--primary)' }}>
-                <h3 style={{ fontSize: '22px', marginBottom: '20px', color: 'var(--primary)' }}>{lang === 'en' ? 'Key Capabilities' : 'القدرات الرئيسية'}</h3>
-                <ul style={{ listStyle: 'none', padding: 0 }}>
-                  {industryFeatures.map((f, i) => (
-                    <li key={i} style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '12px', fontSize: '17px' }}>
-                      <ChevronRight size={18} color="var(--primary)" /> {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <div style={{ order: lang === 'ar' ? 1 : 2 }}>
-              <div style={{ 
-                height: '500px', 
-                width: '100%', 
-                overflow: 'hidden', 
-                boxShadow: '0 30px 60px rgba(0,0,0,0.15)',
-                border: '1px solid #eee'
-              }}>
-                <img 
-                  src={industryImages[id]} 
-                  alt={t[id]} 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-                />
-              </div>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: '32px', marginBottom: '25px', fontWeight: 800 }}>{lang === 'en' ? 'Our Expertise' : 'خبرتنا'}</h2>
+            <p style={{ fontSize: '19px', lineHeight: '1.8', color: 'var(--dark)', marginBottom: '30px' }}>
+              {industryFull}
+            </p>
+            
+            <div style={{ background: 'var(--dark)', color: '#fff', padding: '40px', borderLeft: '5px solid var(--primary)', marginBottom: '60px' }}>
+              <h3 style={{ fontSize: '22px', marginBottom: '20px', color: 'var(--primary)' }}>{lang === 'en' ? 'Key Capabilities' : 'القدرات الرئيسية'}</h3>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {industryFeatures.map((f, i) => (
+                  <li key={i} style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '12px', fontSize: '17px' }}>
+                    <ChevronRight size={18} color="var(--primary)" /> {f}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
