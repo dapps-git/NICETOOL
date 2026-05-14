@@ -20,7 +20,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isTransparentPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/services' || location.pathname === '/industries' || location.pathname === '/clients' || location.pathname === '/contact';
+  const isTransparentPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/services' || location.pathname === '/industries' || location.pathname === '/clients' || location.pathname === '/contact' || location.pathname.startsWith('/industry');
 
   const navClass = `navbar ${scrolled ? 'navbar-scrolled' : (isTransparentPage ? 'navbar-transparent' : '')} ${mobileMenuOpen ? 'mobile-menu-open' : ''}`;
 
@@ -39,8 +39,27 @@ const Navbar = () => {
         <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
           <li><Link to="/" className={location.pathname === '/' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>{t.home}</Link></li>
           <li><Link to="/about" className={location.pathname === '/about' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>{t.about}</Link></li>
-          <li><Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>{t.services}</Link></li>
-          <li><Link to="/industries" className={location.pathname === '/industries' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>{t.industries}</Link></li>
+          <li className="dropdown">
+            <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>
+              {t.services}
+            </Link>
+            <div className="dropdown-menu">
+              <Link to="/services#cnc-milling" onClick={() => setMobileMenuOpen(false)}>CNC Machining</Link>
+              <Link to="/services#tooling-dies" onClick={() => setMobileMenuOpen(false)}>Precision Tooling</Link>
+              <Link to="/services#plant-maintenance" onClick={() => setMobileMenuOpen(false)}>Maintenance</Link>
+            </div>
+          </li>
+          <li className="dropdown">
+            <Link to="/industries" className={location.pathname === '/industries' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>
+              {t.industries}
+            </Link>
+            <div className="dropdown-menu">
+              <Link to="/industry/aerospace" onClick={() => setMobileMenuOpen(false)}>{t.aerospace}</Link>
+              <Link to="/industry/medical" onClick={() => setMobileMenuOpen(false)}>{t.medical}</Link>
+              <Link to="/industry/food" onClick={() => setMobileMenuOpen(false)}>{t.food}</Link>
+              <Link to="/industry/marine" onClick={() => setMobileMenuOpen(false)}>{t.marine}</Link>
+            </div>
+          </li>
           <li><Link to="/clients" className={location.pathname === '/clients' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>{t.clients}</Link></li>
           <li><Link to="/contact" className={location.pathname === '/contact' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>{t.contact}</Link></li>
         </ul>

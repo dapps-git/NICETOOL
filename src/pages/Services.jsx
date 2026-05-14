@@ -72,7 +72,7 @@ const Services = () => {
         <div className="container text-center">
           <h1 className="typewriter delay-1" style={{ fontSize: 'clamp(1.6rem, 6vw, 3rem)', textTransform: 'uppercase', letterSpacing: '4px' }}>{t.services}</h1>
           <div style={{ width: '50px', height: '3px', background: 'var(--primary)', margin: '20px auto' }}></div>
-          <p style={{ opacity: 0.8, maxWidth: '600px', margin: '0 auto', fontSize: '16px' }}>{t.comprehensiveSolutions}</p>
+          <p style={{ opacity: 0.8, maxWidth: '600px', margin: '0 auto', fontSize: '18px' }}>{t.comprehensiveSolutions}</p>
         </div>
       </section>
 
@@ -81,7 +81,7 @@ const Services = () => {
         <div className="container">
           <div className="services-container" style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
             {services.map((svc) => (
-              <div key={svc.id} className="service-row" style={{
+              <div key={svc.id} id={svc.id} className="service-row" style={{
                 display: 'flex',
                 flexDirection: 'column',
                 background: '#fff',
@@ -104,20 +104,20 @@ const Services = () => {
                   />
                 </div>
                 <div style={{ padding: '40px' }}>
-                  <p style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '10px' }}>
+                  <p style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '16px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '10px' }}>
                     {svc.tagline}
                   </p>
-                  <h2 style={{ fontSize: '24px', marginBottom: '15px', fontWeight: 800 }}>{svc.name}</h2>
-                  <p style={{ fontSize: '14px', lineHeight: '1.7', color: 'var(--grey)', marginBottom: '20px' }}>
+                  <h2 style={{ fontSize: '32px', marginBottom: '15px', fontWeight: 800 }}>{svc.name}</h2>
+                  <p style={{ fontSize: '18px', lineHeight: '1.7', color: 'var(--grey)', marginBottom: '20px' }}>
                     {svc.desc}
                   </p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                     {svc.items.map((item, idx) => (
                       <span key={idx} style={{
-                        padding: '5px 12px',
+                        padding: '8px 18px',
                         border: '1px solid #eee',
                         color: 'var(--slate)',
-                        fontSize: '11px',
+                        fontSize: '15px',
                         fontWeight: 600,
                         background: '#fafafa'
                       }}>
@@ -136,12 +136,12 @@ const Services = () => {
       <section className="section" style={{ background: 'var(--primary)', padding: '60px 0' }}>
         <div className="container text-center">
           <h2 style={{ color: '#fff', fontSize: 'clamp(1.2rem, 3vw, 1.8rem)', marginBottom: '15px', fontWeight: 800 }}>{t.integratedSupport}</h2>
-          <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '600px', margin: '0 auto 30px', fontSize: '15px' }}>
+          <p style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '800px', margin: '0 auto 30px', fontSize: '24px' }}>
             {t.integratedText}
           </p>
           <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <span style={{ padding: '10px 25px', background: '#fff', color: 'var(--primary)', fontWeight: 700, fontSize: '13px' }}>{t.solidWorksExpertise}</span>
-            <span style={{ padding: '10px 25px', background: 'transparent', border: '2px solid #fff', color: '#fff', fontWeight: 700, fontSize: '13px' }}>{t.mastercamReady}</span>
+            <span style={{ padding: '10px 25px', background: '#fff', color: 'var(--primary)', fontWeight: 700, fontSize: '16px' }}>{t.solidWorksExpertise}</span>
+            <span style={{ padding: '10px 25px', background: 'transparent', border: '2px solid #fff', color: '#fff', fontWeight: 700, fontSize: '16px' }}>{t.mastercamReady}</span>
           </div>
         </div>
       </section>
@@ -152,7 +152,7 @@ const Services = () => {
           <h2 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.8rem)', marginBottom: '15px', fontWeight: 800 }}>
             {lang === 'en' ? 'Ready to Start Your Project?' : 'هل أنت مستعد لبدء مشروعك؟'}
           </h2>
-          <p style={{ color: 'var(--grey)', marginBottom: '30px', fontSize: '15px' }}>
+          <p style={{ color: 'var(--grey)', marginBottom: '30px', fontSize: '24px' }}>
             {lang === 'en' ? 'Contact our engineering team for a free quote and technical consultation.' : 'تواصل مع فريقنا الهندسي للحصول على عرض أسعار مجاني واستشارة تقنية.'}
           </p>
           <Link to="/contact" className="btn btn-primary">{t.contactUs}</Link>

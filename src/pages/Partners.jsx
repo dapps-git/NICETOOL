@@ -44,7 +44,7 @@ const Clients = () => {
     { img: img13, name: t.client13, desc: t.client13Desc },
     { img: img14, name: t.client14, desc: t.client14Desc }
   ];
- 
+
   return (
     <div className="clients-page page-fade">
       {/* Sub-Hero */}
@@ -58,10 +58,10 @@ const Clients = () => {
       {/* Clients Grid */}
       <section className="section" style={{ paddingBottom: '100px' }}>
         <div className="container">
-          <div className="clients-grid" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(1, 1fr)', 
-            gap: '30px' 
+          <div className="clients-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(1, 1fr)',
+            gap: '30px'
           }}>
             {partners.map((partner, i) => (
               <div key={i} style={{
@@ -75,17 +75,17 @@ const Clients = () => {
                 flexDirection: 'column',
                 alignItems: 'center'
               }} className="partner-card">
-                <div style={{ 
-                  height: '100px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center', 
-                  marginBottom: '20px' 
+                <div style={{
+                  height: '100px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '20px'
                 }}>
                   <img src={partner.img} alt={partner.name} style={{ maxWidth: '100%', maxHeight: '80px', objectFit: 'contain' }} />
                 </div>
-                <h3 style={{ fontSize: '18px', marginBottom: '10px', color: 'var(--primary)' }}>{partner.name}</h3>
-                <p style={{ color: 'var(--grey)', fontSize: '13px', lineHeight: 1.6, margin: 0 }}>
+                <h3 style={{ fontSize: '23px', fontWeight: '500', lineHeight: 1.6, marginBottom: '10px', color: 'var(--primary)' }}>{partner.name}</h3>
+                <p style={{ color: 'var(--grey)', fontSize: '17px', lineHeight: 1.6, margin: 0 }}>
                   {partner.desc}
                 </p>
               </div>
@@ -93,16 +93,32 @@ const Clients = () => {
           </div>
         </div>
       </section>
-      
+
       <style>{`
         @media (min-width: 992px) {
           .clients-grid {
             grid-template-columns: repeat(4, 1fr) !important;
           }
         }
-        @media (max-width: 991px) and (min-width: 600px) {
+        @media (max-width: 991px) {
           .clients-grid {
             grid-template-columns: repeat(2, 1fr) !important;
+            gap: 15px !important;
+          }
+          .partner-card {
+            padding: 20px 10px !important;
+          }
+          .partner-card h3 {
+            font-size: 16px !important;
+          }
+          .partner-card p {
+            font-size: 12px !important;
+          }
+          section:not(.hero) p,
+          .partner-card p,
+          .client-card-home p {
+              font-size: 15px !important;
+              line-height: 1.4 !important;
           }
         }
       `}</style>

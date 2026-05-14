@@ -10,6 +10,7 @@ import Services from './pages/Services';
 import Industries from './pages/Industries';
 import Clients from './pages/Partners';
 import Contact from './pages/Contact';
+import IndustryDetail from './pages/IndustryDetail';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route path="/industries" element={<Industries />} />
               <Route path="/clients" element={<Clients />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/industry/:id" element={<IndustryDetail />} />
             </Routes>
           </main>
           <Footer />

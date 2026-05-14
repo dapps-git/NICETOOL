@@ -22,7 +22,7 @@ const Contact = () => {
         <div className="container text-center">
           <h1 className="typewriter delay-1" style={{ fontSize: 'clamp(1.6rem, 6vw, 3rem)', textTransform: 'uppercase', letterSpacing: '4px' }}>{t.contactUs}</h1>
           <div style={{ width: '50px', height: '3px', background: 'var(--primary)', margin: '20px auto' }}></div>
-          <p style={{ opacity: 0.8, maxWidth: '600px', margin: '0 auto', fontSize: '16px' }}>{t.getInTouch}</p>
+          <p style={{ opacity: 0.8, maxWidth: '600px', margin: '0 auto', fontSize: '18px' }}>{t.getInTouch}</p>
         </div>
       </section>
 
@@ -41,7 +41,7 @@ const Contact = () => {
                   <div style={{ color: 'var(--primary)', marginTop: '5px' }}><MapPin size={22} /></div>
                   <div>
                     <h4 style={{ marginBottom: '5px', fontSize: '17px' }}>{t.officeAddress}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.6 }}>
+                    <p style={{ color: 'var(--grey)', fontSize: '15px', lineHeight: 1.6 }}>
                       Jeddah - Al-Jawhara Dist.<br />
                       Near Al-Jawhara Petrol Station<br />
                       P.O.Box 126002 - Jeddah 21352
@@ -52,7 +52,7 @@ const Contact = () => {
                   <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Phone size={22} /></div>
                   <div>
                     <h4 style={{ marginBottom: '5px', fontSize: '17px' }}>{t.phone}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
+                    <p style={{ color: 'var(--grey)', fontSize: '15px' }}>
                       <a href="tel:+966541802013" style={{ color: 'inherit' }}>054 180 2013</a>
                     </p>
                   </div>
@@ -61,7 +61,7 @@ const Contact = () => {
                   <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Mail size={22} /></div>
                   <div>
                     <h4 style={{ marginBottom: '5px', fontSize: '17px' }}>{t.emailInquiry}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
+                    <p style={{ color: 'var(--grey)', fontSize: '15px' }}>
                       <a href="mailto:info@nicetoolsa.com" style={{ color: 'inherit' }}>info@nicetoolsa.com</a>
                     </p>
                   </div>
@@ -70,8 +70,8 @@ const Contact = () => {
 
               {/* Company IDs */}
               <div style={{ marginTop: '50px', padding: '25px', background: '#f9f9f9', border: '1px solid #eee' }}>
-                <p style={{ fontSize: '13px', marginBottom: '8px' }}><strong>VAT #:</strong> 310973524100003</p>
-                <p style={{ fontSize: '13px' }}><strong>C.R.:</strong> 4030421338</p>
+                <p style={{ fontSize: '15px', marginBottom: '8px' }}><strong>VAT #:</strong> 310973524100003</p>
+                <p style={{ fontSize: '15px' }}><strong>C.R.:</strong> 4030421338</p>
               </div>
             </div>
 
@@ -80,12 +80,12 @@ const Contact = () => {
               <h2 style={{ fontSize: '26px', marginBottom: '40px' }}>{t.inquiryForm}</h2>
               <form style={{ display: 'grid', gap: '15px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                  <input type="text" placeholder={t.fullName} style={{ width: '100%', padding: '12px', border: '1px solid #ddd', fontSize: '14px' }} />
-                  <input type="email" placeholder={t.emailAddress} style={{ width: '100%', padding: '12px', border: '1px solid #ddd', fontSize: '14px' }} />
+                  <input type="text" placeholder={t.fullName} style={{ width: '100%', padding: '15px', border: '1px solid #ddd', fontSize: '16px' }} />
+                  <input type="email" placeholder={t.emailAddress} style={{ width: '100%', padding: '15px', border: '1px solid #ddd', fontSize: '16px' }} />
                 </div>
-                <input type="text" placeholder={t.subject} style={{ width: '100%', padding: '12px', border: '1px solid #ddd', fontSize: '14px' }} />
-                <textarea placeholder={t.messagePlaceholder} style={{ width: '100%', padding: '12px', border: '1px solid #ddd', minHeight: '120px', fontSize: '14px' }}></textarea>
-                <button type="submit" className="btn btn-primary" style={{ padding: '15px', fontSize: '15px', fontWeight: 600 }}>{t.sendInquiry}</button>
+                <input type="text" placeholder={t.subject} style={{ width: '100%', padding: '15px', border: '1px solid #ddd', fontSize: '16px' }} />
+                <textarea placeholder={t.messagePlaceholder} style={{ width: '100%', padding: '15px', border: '1px solid #ddd', minHeight: '150px', fontSize: '16px' }}></textarea>
+                <button type="submit" className="btn btn-primary" style={{ padding: '18px', fontSize: '16px', fontWeight: 600 }}>{t.sendInquiry}</button>
               </form>
             </div>
           </div>
@@ -95,11 +95,11 @@ const Contact = () => {
       {/* Map Section */}
       <section className="section" style={{ background: '#fcfcfc' }}>
         <div className="container">
-          <div style={{ 
-            height: '400px', 
-            width: '100%', 
-            borderRadius: '16px', 
-            overflow: 'hidden', 
+          <div style={{
+            height: '400px',
+            width: '100%',
+            borderRadius: '16px',
+            overflow: 'hidden',
             boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
             border: '1px solid #eee'
           }}>

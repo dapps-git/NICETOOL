@@ -95,7 +95,7 @@ const Home = () => {
             <span className="typewriter delay-2">{t.quality}</span>
           </h1>
           <p style={{
-            fontSize: 'clamp(1rem, 3vw, 1rem)',
+            fontSize: '18px',
             color: '#eee',
             marginBottom: '40px',
             maxWidth: '750px',
@@ -146,10 +146,10 @@ const Home = () => {
             <div>
               <h2 style={{ fontSize: '36px', marginBottom: '25px', fontWeight: 800 }}>{t.whoWeAre}</h2>
               <div style={{ width: '60px', height: '4px', background: 'var(--primary)', marginBottom: '30px' }}></div>
-              <p style={{ fontSize: '18px', lineHeight: '1.8', color: 'var(--dark)', marginBottom: '20px', fontWeight: 500 }}>
+              <p style={{ fontSize: '19px', lineHeight: '1.8', color: 'var(--dark)', marginBottom: '20px', fontWeight: 500 }}>
                 {t.advancedCncDesc}
               </p>
-              <p style={{ fontSize: '16px', lineHeight: '1.7', color: 'var(--grey)' }}>
+              <p style={{ fontSize: '17px', lineHeight: '1.7', color: 'var(--grey)' }}>
                 {t.vastVarietyDesc}
               </p>
             </div>
@@ -211,7 +211,7 @@ const Home = () => {
                 }}>
                   {t.processesList.map((p, i) => (
                     <div key={i} className="process-item" style={{ 
-                      fontSize: isMobile ? '14px' : '16px', 
+                      fontSize: isMobile ? '15px' : '17px', 
                       color: 'var(--grey)',
                       display: 'flex',
                       alignItems: 'center',
@@ -280,7 +280,7 @@ const Home = () => {
               <h2 style={{ fontSize: '28px', marginBottom: '30px', fontWeight: 800 }}>{t.benefitsTitle}</h2>
               <ul style={{ listStyle: 'none', padding: 0 }}>
                 {[t.reducedLabor, t.isoStandards, t.fastProduction, t.highPrecision, t.customSpecs].map((b, i) => (
-                  <li key={i} style={{ marginBottom: '15px', display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '15px' }}>
+                  <li key={i} style={{ marginBottom: '15px', display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '17px' }}>
                     <span style={{ color: 'var(--primary)', fontWeight: 'bold' }}>✓</span> {b}
                   </li>
                 ))}
@@ -288,7 +288,7 @@ const Home = () => {
             </div>
             <div className="machine-shop-box" style={{ background: 'var(--dark)', color: '#fff', padding: '50px' }}>
               <h2 style={{ fontSize: '28px', marginBottom: '20px', color: 'var(--primary)' }}>{t.machineShopTitle}</h2>
-              <p style={{ fontSize: '16px', lineHeight: '1.8', opacity: 0.9 }}>
+              <p style={{ fontSize: '17px', lineHeight: '1.8', opacity: 0.9 }}>
                 {t.shopDesc}
               </p>
               <div style={{ marginTop: '30px' }}>
@@ -338,7 +338,7 @@ const Home = () => {
                   <img src={client.img} alt={client.name} style={{ maxWidth: '100%', maxHeight: '60px', objectFit: 'contain' }} />
                 </div>
                 <h3 style={{ fontSize: '18px', marginBottom: '10px', color: 'var(--primary)' }}>{client.name}</h3>
-                <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ color: 'var(--grey)', fontSize: '20px', lineHeight: 1.6, margin: 0 }}>
                   {client.desc}
                 </p>
               </div>
@@ -368,7 +368,7 @@ const Home = () => {
                   <div style={{ color: 'var(--primary)', marginTop: '5px' }}><MapPin size={22} /></div>
                   <div>
                     <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.officeAddress}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.6 }}>
+                    <p style={{ color: 'var(--grey)', fontSize: '15px', lineHeight: 1.6 }}>
                       Jeddah - Al-Jawhara Dist.<br />
                       Near Al-Jawhara Petrol Station<br />
                       P.O.Box 126002 - Jeddah 21352
@@ -379,7 +379,7 @@ const Home = () => {
                   <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Phone size={22} /></div>
                   <div>
                     <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.phone}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
+                    <p style={{ color: 'var(--grey)', fontSize: '15px' }}>
                       <a href="tel:+966541802013" style={{ color: 'inherit', textDecoration: 'none' }}>054 180 2013</a>
                     </p>
                   </div>
@@ -388,7 +388,7 @@ const Home = () => {
                   <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Mail size={22} /></div>
                   <div>
                     <h4 style={{ marginBottom: '5px', fontSize: '17px', fontWeight: 700 }}>{t.emailInquiry}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
+                    <p style={{ color: 'var(--grey)', fontSize: '15px' }}>
                       <a href="mailto:info@nicetoolsa.com" style={{ color: 'inherit', textDecoration: 'none' }}>info@nicetoolsa.com</a>
                     </p>
                   </div>
