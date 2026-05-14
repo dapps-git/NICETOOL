@@ -20,25 +20,25 @@ const Industries = () => {
       id: 'medical',
       name: t.medical, 
       desc: lang === 'en' ? 'Manufacturing precision surgical instruments, orthopedic implants, and medical device components with biocompatible materials.' : 'تصنيع الأدوات الجراحية الدقيقة، وغرسات العظام، ومكونات الأجهزة الطبية باستخدام مواد متوافقة حيويًا.',
-      icon: "🏥" 
+      img: "/medical.png" 
     },
     { 
       id: 'aerospace',
       name: t.aerospace, 
       desc: lang === 'en' ? 'Complex 5-axis machining for engine parts, structural components, and high-strength alloys requiring extreme precision.' : 'تشغيل خماسي المحاور معقد لأجزاء المحرك، والمكونات الهيكلية، والسبائك عالية القوة التي تتطلب دقة فائقة.',
-      icon: "✈️" 
+      img: "/aireospace.png" 
     },
     { 
       id: 'food',
       name: t.food, 
       desc: lang === 'en' ? 'Stainless steel component manufacturing for food processing plants, ensuring hygiene standards and corrosion resistance.' : 'تصنيع مكونات الفولاذ المقاوم للصدأ لمصانع تجهيز الأغذية، مما يضمن معايير النظافة ومقاومة التآكل.',
-      icon: "🥫" 
+      img: "/foodprocess.png" 
     },
     { 
       id: 'marine',
       name: t.marine, 
       desc: lang === 'en' ? 'Manufacturing propeller shafts, marine engine parts, and specialized deck equipment resistant to saltwater environments.' : 'تصنيع أعمدة المروحة وأجزاء المحركات البحرية والمعدات الميدانية المتخصصة المقاومة لبيئات المياه المالحة.',
-      icon: "⚓" 
+      img: "/marine.png" 
     }
   ];
 
@@ -83,11 +83,13 @@ const Industries = () => {
                     display: 'flex', 
                     alignItems: 'center', 
                     justifyContent: 'center',
-                    fontSize: '40px',
                     marginBottom: '25px',
                     border: '2px solid var(--primary)',
-                    color: 'var(--primary)'
-                  }}>{s.icon}</div>
+                    overflow: 'hidden',
+                    padding: '10px'
+                  }}>
+                    <img src={s.img} alt={s.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
                   <h3 style={{ marginBottom: '20px', fontSize: '28px', fontWeight: 800 }}>{s.name}</h3>
                   <p style={{ color: 'var(--grey)', fontSize: '18px', lineHeight: 1.8, margin: 0 }}>{s.desc}</p>
                 </div>
