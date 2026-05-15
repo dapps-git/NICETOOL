@@ -20,7 +20,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isTransparentPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/services' || location.pathname === '/industries' || location.pathname === '/clients' || location.pathname === '/contact' || location.pathname.startsWith('/industry');
+  const isTransparentPage = location.pathname === '/' || location.pathname === '/about' || location.pathname === '/services' || location.pathname === '/industries' || location.pathname === '/clients' || location.pathname === '/contact' || location.pathname.startsWith('/industry') || location.pathname.startsWith('/service');
 
   const navClass = `navbar ${scrolled ? 'navbar-scrolled' : (isTransparentPage ? 'navbar-transparent' : '')} ${mobileMenuOpen ? 'mobile-menu-open' : ''}`;
 
@@ -43,7 +43,12 @@ const Navbar = () => {
             <Link to="/services" className={location.pathname === '/services' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>
               {t.services}
             </Link>
-
+            <div className="dropdown-menu">
+              <Link to="/service/cnc-milling" onClick={() => setMobileMenuOpen(false)}>{lang === 'en' ? 'CNC Milling' : 'تفريز CNC'}</Link>
+              <Link to="/service/cnc-lathe" onClick={() => setMobileMenuOpen(false)}>{lang === 'en' ? 'CNC Turning' : 'خراطة CNC'}</Link>
+              <Link to="/service/tooling" onClick={() => setMobileMenuOpen(false)}>{lang === 'en' ? 'Precision Tooling' : 'الأدوات الدقيقة'}</Link>
+              <Link to="/service/maintenance" onClick={() => setMobileMenuOpen(false)}>{lang === 'en' ? 'Plant Maintenance' : 'صيانة المصانع'}</Link>
+            </div>
           </li>
           <li className="dropdown">
             <Link to="/industries" className={location.pathname === '/industries' ? 'active' : ''} onClick={() => setMobileMenuOpen(false)}>

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
+import { ChevronRight } from 'lucide-react';
 
 const Services = () => {
   const { lang } = useLanguage();
@@ -81,52 +82,65 @@ const Services = () => {
         <div className="container">
           <div className="services-container" style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
             {services.map((svc) => (
-              <div key={svc.id} id={svc.id} className="service-row" style={{
-                display: 'flex',
-                flexDirection: 'column',
-                background: '#fff',
-                border: '1px solid #f0f0f0',
-                transition: 'var(--transition)'
-              }}>
-                <div style={{
-                  height: '300px',
-                  width: '100%',
-                  overflow: 'hidden'
+              <Link key={svc.id} to={`/service/${svc.id === 'tooling-dies' ? 'tooling' : svc.id === 'plant-maintenance' ? 'maintenance' : svc.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <div id={svc.id} className="service-row" style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: '#fff',
+                  border: '1px solid #f0f0f0',
+                  transition: 'var(--transition)',
+                  cursor: 'pointer'
                 }}>
-                  <img
-                    src={svc.img}
-                    alt={svc.name}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover'
-                    }}
-                  />
-                </div>
-                <div style={{ padding: '40px' }}>
-                  <p style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '16px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '10px' }}>
-                    {svc.tagline}
-                  </p>
-                  <h2 style={{ fontSize: '32px', marginBottom: '15px', fontWeight: 800 }}>{svc.name}</h2>
-                  <p style={{ fontSize: '18px', lineHeight: '1.7', color: 'var(--grey)', marginBottom: '20px' }}>
-                    {svc.desc}
-                  </p>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                    {svc.items.map((item, idx) => (
-                      <span key={idx} style={{
-                        padding: '8px 18px',
-                        border: '1px solid #eee',
-                        color: 'var(--slate)',
-                        fontSize: '15px',
-                        fontWeight: 600,
-                        background: '#fafafa'
-                      }}>
-                        {item}
-                      </span>
-                    ))}
+                  <div style={{
+                    height: '300px',
+                    width: '100%',
+                    overflow: 'hidden'
+                  }}>
+                    <img
+                      src={svc.img}
+                      alt={svc.name}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                    />
+                  </div>
+                  <div style={{ padding: '40px' }}>
+                    <p style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '16px', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '10px' }}>
+                      {svc.tagline}
+                    </p>
+                    <h2 style={{ fontSize: '32px', marginBottom: '15px', fontWeight: 800 }}>{svc.name}</h2>
+                    <p style={{ fontSize: '18px', lineHeight: '1.7', color: 'var(--grey)', marginBottom: '25px' }}>
+                      {svc.desc}
+                    </p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '30px' }}>
+                      {svc.items.map((item, idx) => (
+                        <span key={idx} style={{
+                          padding: '8px 18px',
+                          border: '1px solid #eee',
+                          color: 'var(--slate)',
+                          fontSize: '15px',
+                          fontWeight: 600,
+                          background: '#fafafa'
+                        }}>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                    <span style={{ 
+                      color: 'var(--primary)', 
+                      fontWeight: 700, 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      gap: '8px',
+                      fontSize: '16px'
+                    }}>
+                      {lang === 'en' ? 'View Service Details' : 'عرض تفاصيل الخدمة'} <ChevronRight size={18} />
+                    </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

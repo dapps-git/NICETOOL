@@ -132,8 +132,28 @@ export const translations = {
     reducedLabor: "Reduced labor cost through automation",
     fastProduction: "Fast production of complex components",
     customSpecs: "Custom customer specifications",
-    machineShopTitle: "Machine Shop Capabilities",
-    shopDesc: "From small to large production runs and one-off manufacturing, we provide complete manual and CNC production capabilities."
+    shopDesc: "From small to large production runs and one-off manufacturing, we provide complete manual and CNC production capabilities.",
+    
+    // Service Details
+    'cnc-milling-title': "CNC Milling",
+    'cnc-milling-desc': "High-precision 3, 4, and 5-axis milling for complex parts.",
+    'cnc-milling-full': "Our CNC milling services utilize advanced multi-axis technology to produce components with extreme precision. We specialize in complex geometries for aerospace, medical, and high-tech industries using GF Mikron and Mazak equipment.",
+    'cnc-milling-features': ["5-Axis Precision Machining", "Aerospace-Grade Tolerances", "Complex Geometries", "Rapid Prototyping", "Expert Simulation"],
+    
+    'cnc-lathe-title': "CNC Lathe & Turning",
+    'cnc-lathe-desc': "Precision turning for shafts, pins, and cylindrical components.",
+    'cnc-lathe-full': "The CNC turning division at NICE TOOLS produces high-quality cylindrical components with live tooling capabilities. We handle everything from micro-scale pins to large industrial shafts with precision threading and boring.",
+    'cnc-lathe-features': ["Live Tooling Operations", "Shaft Manufacturing", "Precision Threading", "Boring & Reaming", "High-Volume Production"],
+    
+    'tooling-title': "Precision Tooling & Molds",
+    'tooling-desc': "Custom die sets, injection molds, and specialized fixtures.",
+    'tooling-full': "Our tooling department specializes in the design and manufacture of high-precision molds and dies. We provide end-to-end support from SolidWorks design and Mastercam programming to final assembly and testing.",
+    'tooling-features': ["Plastic Injection Molds", "Progressive Die Sets", "Custom Jigs & Fixtures", "Mold Repair & Refurbishment", "Technical Design Support"],
+    
+    'maintenance-title': "Plant Maintenance",
+    'maintenance-desc': "On-site support and industrial machinery refurbishment.",
+    'maintenance-full': "NICE TOOLS offers comprehensive plant maintenance services to minimize downtime and optimize industrial performance. Our mobile team provides on-site machining, equipment refurbishment, and preventive maintenance support.",
+    'maintenance-features': ["On-site Machining", "Machinery Refurbishment", "Preventive Maintenance", "Breakdown Support", "Spare Parts Fabrication"]
   },
   ar: {
     home: "الرئيسية",
@@ -270,6 +290,27 @@ export const translations = {
     fastProduction: "إنتاج سريع للمكونات المعقدة",
     customSpecs: "مواصفات مخصصة للعملاء",
     machineShopTitle: "إمكانيات ورشة الآلات",
-    shopDesc: "من عمليات الإنتاج الصغيرة إلى الكبيرة والتصنيع لمرة واحدة، نحن نقدم قدرات إنتاج يدوية وCNC كاملة."
+    shopDesc: "من عمليات الإنتاج الصغيرة إلى الكبيرة والتصنيع لمرة واحدة، نحن نقدم قدرات إنتاج يدوية وCNC كاملة.",
+    
+    // Service Details
+    'cnc-milling-title': "تفريز الـ CNC",
+    'cnc-milling-desc': "تفريز عالي الدقة بـ ٣ و٤ و٥ محاور للقطع المعقدة.",
+    'cnc-milling-full': "تستخدم خدمات التفريز CNC لدينا تقنية متقدمة متعددة المحاور لإنتاج مكونات بدقة متناهية. نحن متخصصون في الأشكال الهندسية المعقدة لقطاعات الطيران والطب والتقنية العالية باستخدام معدات GF Mikron و Mazak.",
+    'cnc-milling-features': ["تشغيل دقيق خماسي المحاور", "تفاوتات معايير الطيران", "أشكال هندسية معقدة", "النماذج الأولية السريعة", "محاكاة خبيرة"],
+    
+    'cnc-lathe-title': "مخرطة وخراطة الـ CNC",
+    'cnc-lathe-desc': "خراطة دقيقة للأعمدة والمسامير والمكونات الأسطوانية.",
+    'cnc-lathe-full': "ينتج قسم الخراطة CNC في نايس تولز مكونات أسطوانية عالية الجودة بقدرات أدوات حية. نحن نتعامل مع كل شيء من المسامير الصغيرة إلى الأعمدة الصناعية الكبيرة مع القلوظة والتثقيب الدقيق.",
+    'cnc-lathe-features': ["عمليات الأدوات الحية", "تصنيع الأعمدة", "القلوظة الدقيقة", "التثقيب والترويس", "الإنتاج بكميات كبيرة"],
+    
+    'tooling-title': "الأدوات الدقيقة والقوالب",
+    'tooling-desc': "مجموعات القوالب المخصصة وقوالب الحقن والمثبتات المتخصصة.",
+    'tooling-full': "يتخصص قسم الأدوات لدينا في تصميم وتصنيع القوالب والموتيات عالية الدقة. نحن نقدم دعماً شاملاً من تصميم SolidWorks وبرمجة Mastercam إلى التجميع النهائي والاختبار.",
+    'tooling-features': ["قوالب حقن البلاستيك", "مجموعات القوالب التقدمية", "الوصلات والمثبتات المخصصة", "إصلاح وتجديد القوالب", "دعم التصميم الفني"],
+    
+    'maintenance-title': "صيانة المصانع",
+    'maintenance-desc': "الدعم في الموقع وتجديد الآلات الصناعية.",
+    'maintenance-full': "تقدم نايس تولز خدمات صيانة شاملة للمصانع لتقليل وقت التوقف عن العمل وتحسين الأداء الصناعي. يوفر فريقنا المتنقل خدمات التشغيل في الموقع، وتجديد المعدات، ودعم الصيانة الوقائية.",
+    'maintenance-features': ["التشغيل الآلي في الموقع", "تجديد الآلات", "الصيانة الوقائية", "دعم الأعطال", "تصنيع قطع الغيار"]
   }
 };

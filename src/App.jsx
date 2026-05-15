@@ -11,6 +11,7 @@ import Industries from './pages/Industries';
 import Clients from './pages/Partners';
 import Contact from './pages/Contact';
 import IndustryDetail from './pages/IndustryDetail';
+import ServiceDetail from './pages/ServiceDetail';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route path="/clients" element={<Clients />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/industry/:id" element={<IndustryDetail />} />
+              <Route path="/service/:id" element={<ServiceDetail />} />
             </Routes>
           </main>
           <Footer />
