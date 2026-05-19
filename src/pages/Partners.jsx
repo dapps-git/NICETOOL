@@ -15,6 +15,15 @@ import img11 from '../assets/image copy 10.png';
 import img12 from '../assets/image copy 12.png';
 import img13 from '../assets/image copy 13.png';
 import img14 from '../assets/image copy 14.png';
+import img15 from '../assets/image copy 15.png';
+import img16 from '../assets/image copy 16.png';
+import img17 from '../assets/image copy 17.png';
+import img18 from '../assets/image copy 18.png';
+import img19 from '../assets/image copy 19.png';
+import img20 from '../assets/image copy 20.png';
+import img21 from '../assets/image copy 21.png';
+
+
 
 const Clients = () => {
   const { lang } = useLanguage();
@@ -29,20 +38,28 @@ const Clients = () => {
   }, [lang]);
 
   const partners = [
-    { img: img1, name: t.client1, desc: t.client1Desc },
-    { img: img2, name: t.client2, desc: t.client2Desc },
-    { img: img3, name: t.client3, desc: t.client3Desc },
-    { img: img4, name: t.client4, desc: t.client4Desc },
-    { img: img5, name: t.client5, desc: t.client5Desc },
-    { img: img6, name: t.client6, desc: t.client6Desc },
-    { img: img7, name: t.client7, desc: t.client7Desc },
-    { img: img8, name: t.client8, desc: t.client8Desc },
-    { img: img9, name: t.client9, desc: t.client9Desc },
-    { img: img10, name: t.client10, desc: t.client10Desc },
-    { img: img11, name: t.client11, desc: t.client11Desc },
-    { img: img12, name: t.client12, desc: t.client12Desc },
-    { img: img13, name: t.client13, desc: t.client13Desc },
-    { img: img14, name: t.client14, desc: t.client14Desc }
+    { img: img1, name: t.client1, },
+    { img: img2, name: t.client2, },
+    { img: img3, name: t.client3, },
+    { img: img4, name: t.client4, },
+    { img: img5, name: t.client5, },
+    { img: img6, name: t.client6, },
+    { img: img7, name: t.client7, },
+    { img: img8, name: t.client8, },
+    { img: img9, name: t.client9, },
+    { img: img10, name: t.client10, },
+    { img: img11, name: t.client11, },
+    { img: img12, name: t.client12, },
+    { img: img13, name: t.client13, },
+    { img: img14, name: t.client14, },
+    { img: img15, name: t.client15, },
+    { img: img16, name: t.client16, },
+    { img: img17, name: t.client17, },
+    { img: img18, name: t.client18, },
+    { img: img19, name: t.client19, },
+    { img: img20, name: t.client20, },
+    { img: img21, name: t.client21, },
+
   ];
 
   return (
@@ -84,10 +101,7 @@ const Clients = () => {
                 }}>
                   <img src={partner.img} alt={partner.name} style={{ maxWidth: '100%', maxHeight: '80px', objectFit: 'contain' }} />
                 </div>
-                <h3 style={{ fontSize: '23px', fontWeight: '500', lineHeight: 1.6, marginBottom: '10px', color: 'var(--primary)' }}>{partner.name}</h3>
-                <p style={{ color: 'var(--grey)', fontSize: '17px', lineHeight: 1.6, margin: 0 }}>
-                  {partner.desc}
-                </p>
+                <h3 style={{ fontSize: '23px', fontWeight: '500', lineHeight: 1.6, marginBottom: '0', color: 'var(--primary)' }}>{partner.name}</h3>
               </div>
             ))}
           </div>
@@ -111,11 +125,7 @@ const Clients = () => {
           .partner-card h3 {
             font-size: 16px !important;
           }
-          .partner-card p {
-            font-size: 12px !important;
-          }
           section:not(.hero) p,
-          .partner-card p,
           .client-card-home p {
               font-size: 15px !important;
               line-height: 1.4 !important;

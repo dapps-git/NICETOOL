@@ -47,14 +47,14 @@ const Home = () => {
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener('resize', handleResize);
-    
+
     // SEO Logic
     document.title = lang === 'en' ? "NICE TOOLS | Precision CNC Machining & Manufacturing Saudi Arabia" : "نايس تولز | تصنيع CNC دقيق وحلول هندسية - السعودية";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
       metaDesc.setAttribute('content', t.advancedCncDesc);
     }
-    
+
     return () => window.removeEventListener('resize', handleResize);
   }, [lang, t.advancedCncDesc]);
 
@@ -137,11 +137,11 @@ const Home = () => {
       {/* Intro / About Section */}
       <section className="section bg-light-grey" style={{ background: '#fcfcfc', padding: isMobile ? '40px 0' : '80px 0' }}>
         <div className="container">
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-            gap: isMobile ? '30px' : '60px', 
-            alignItems: 'center' 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: isMobile ? '30px' : '60px',
+            alignItems: 'center'
           }}>
             <div>
               <h2 style={{ fontSize: '36px', marginBottom: '25px', fontWeight: 800 }}>{t.whoWeAre}</h2>
@@ -161,8 +161,8 @@ const Home = () => {
       </section>
 
       {/* Capabilities Section */}
-      <section className="section" style={{ 
-        background: '#f8f9fa', 
+      <section className="section" style={{
+        background: '#f8f9fa',
         padding: isMobile ? '40px 0' : '80px 0',
         position: 'relative',
         overflow: 'hidden',
@@ -170,48 +170,48 @@ const Home = () => {
         borderBottom: '1px solid #eee'
       }}>
         {/* Technical Grid Pattern */}
-        <div style={{ 
-          position: 'absolute', 
-          top: 0, 
-          left: 0, 
-          width: '100%', 
-          height: '100%', 
-          backgroundImage: 'radial-gradient(#ddd 0.5px, transparent 0.5px)', 
-          backgroundSize: '20px 20px', 
-          opacity: 0.3 
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundImage: 'radial-gradient(#ddd 0.5px, transparent 0.5px)',
+          backgroundSize: '20px 20px',
+          opacity: 0.3
         }}></div>
-        
+
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--dark)' }}>{t.machiningCapabilitiesTitle}</h2>
             <div style={{ width: '80px', height: '4px', background: 'var(--primary)', margin: '20px auto' }}></div>
           </div>
-          
-          <div style={{ 
-            background: '#fff', 
-            padding: isMobile ? '30px 20px' : '60px', 
-            borderRadius: '16px', 
-            boxShadow: '0 15px 50px rgba(0,0,0,0.06)', 
+
+          <div style={{
+            background: '#fff',
+            padding: isMobile ? '30px 20px' : '60px',
+            borderRadius: '16px',
+            boxShadow: '0 15px 50px rgba(0,0,0,0.06)',
             border: '1px solid #eee',
             position: 'relative',
             zIndex: 2
           }}>
-            <div style={{ 
-              display: 'grid', 
-              gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', 
-              gap: isMobile ? '40px' : '60px' 
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+              gap: isMobile ? '40px' : '60px'
             }}>
               {/* Processes column */}
               <div>
                 <h3 style={{ color: 'var(--primary)', marginBottom: '30px', borderBottom: '2px solid #f8f9fa', paddingBottom: '15px', fontWeight: 700, fontSize: '24px' }}>{t.processesTitle}</h3>
-                <div style={{ 
-                  display: 'grid', 
-                  gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', 
-                  gap: isMobile ? '12px' : '18px' 
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+                  gap: isMobile ? '12px' : '18px'
                 }}>
                   {t.processesList.map((p, i) => (
-                    <div key={i} className="process-item" style={{ 
-                      fontSize: isMobile ? '15px' : '17px', 
+                    <div key={i} className="process-item" style={{
+                      fontSize: isMobile ? '15px' : '17px',
                       color: 'var(--grey)',
                       display: 'flex',
                       alignItems: 'center',
@@ -237,17 +237,17 @@ const Home = () => {
                     <p style={{ color: 'var(--dark)', fontWeight: 600, fontSize: '18px' }}>{t.axesList}</p>
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid #f8f9fa', paddingBottom: '15px', fontWeight: 700, fontSize: '20px' }}>{t.materialsTitle}</h3>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                     {t.materialsList.split(', ').map((mat, i) => (
-                      <span key={i} style={{ 
-                        padding: '8px 14px', 
-                        background: '#fcfcfc', 
-                        border: '1px solid #eee', 
-                        borderRadius: '6px', 
-                        fontSize: '13px', 
+                      <span key={i} style={{
+                        padding: '8px 14px',
+                        background: '#fcfcfc',
+                        border: '1px solid #eee',
+                        borderRadius: '6px',
+                        fontSize: '13px',
                         color: 'var(--grey)',
                         fontWeight: 600,
                         textTransform: 'uppercase',
@@ -271,10 +271,10 @@ const Home = () => {
       {/* Benefits & Machine Shop */}
       <section className="section" style={{ padding: isMobile ? '40px 0' : '80px 0' }}>
         <div className="container">
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-            gap: isMobile ? '40px' : '80px' 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: isMobile ? '40px' : '80px'
           }}>
             <div>
               <h2 style={{ fontSize: '28px', marginBottom: '30px', fontWeight: 800 }}>{t.benefitsTitle}</h2>
@@ -304,22 +304,22 @@ const Home = () => {
         <div className="container text-center">
           <h2 style={{ fontSize: '32px', marginBottom: '15px', fontWeight: 800 }}>{t.topClientsTitle}</h2>
           <div style={{ width: '60px', height: '4px', background: 'var(--primary)', margin: isMobile ? '0 auto 30px' : '0 auto 50px' }}></div>
-          
-          <div className="mobile-2-col" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(auto-fit, minmax(250px, 1fr))', 
+
+          <div className="mobile-2-col" style={{
+            display: 'grid',
+            gridTemplateColumns: isMobile ? 'repeat(2, 1fr)' : 'repeat(auto-fit, minmax(250px, 1fr))',
             gap: isMobile ? '15px' : '30px',
             marginBottom: isMobile ? '30px' : '50px'
           }}>
             {[
-              { id: 1, name: t.client1, desc: t.client1Desc, img: img1 },
-              { id: 2, name: t.client2, desc: t.client2Desc, img: img2 },
-              { id: 3, name: t.client3, desc: t.client3Desc, img: img3 },
-              { id: 4, name: t.client4, desc: t.client4Desc, img: img4 },
-              { id: 5, name: t.client5, desc: t.client5Desc, img: img5 },
-              { id: 6, name: t.client6, desc: t.client6Desc, img: img6 },
-              { id: 7, name: t.client7, desc: t.client7Desc, img: img7 },
-              { id: 8, name: t.client8, desc: t.client8Desc, img: img8 }
+              { id: 1, name: t.client1, img: img1 },
+              { id: 2, name: t.client2, img: img2 },
+              { id: 3, name: t.client3, img: img3 },
+              { id: 4, name: t.client4, img: img4 },
+              { id: 5, name: t.client5, img: img5 },
+              { id: 6, name: t.client6, img: img6 },
+              { id: 7, name: t.client7, img: img7 },
+              { id: 8, name: t.client8, img: img8 }
             ].map((client) => (
               <div key={client.id} style={{
                 background: '#fff',
@@ -328,10 +328,10 @@ const Home = () => {
                 transition: 'var(--transition)',
                 textAlign: 'center'
               }} className="client-card-home">
-                <div style={{ 
-                  height: '80px', 
-                  display: 'flex', 
-                  alignItems: 'center', 
+                <div style={{
+                  height: '80px',
+                  display: 'flex',
+                  alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '20px'
                 }}>
@@ -344,7 +344,7 @@ const Home = () => {
               </div>
             ))}
           </div>
-          
+
           <Link to="/clients" className="btn btn-outline-dark" style={{ padding: '12px 30px' }}>
             {t.viewMoreClients}
           </Link>
@@ -354,9 +354,9 @@ const Home = () => {
       {/* Contact & Map Section */}
       <section className="section" style={{ background: '#fff', borderTop: '1px solid #eee' }}>
         <div className="container">
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
             gap: isMobile ? '40px' : '80px',
             alignItems: 'start'
           }}>
@@ -394,20 +394,20 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div style={{ marginTop: '40px' }}>
-                 <Link to="/contact" className="btn btn-primary" style={{ padding: '12px 30px' }}>
-                   {lang === 'en' ? 'Send Inquiry' : 'إرسال استفسار'}
-                 </Link>
+                <Link to="/contact" className="btn btn-primary" style={{ padding: '12px 30px' }}>
+                  {lang === 'en' ? 'Send Inquiry' : 'إرسال استفسار'}
+                </Link>
               </div>
             </div>
 
             {/* Right: Map in a Card */}
-            <div style={{ 
-              height: isMobile ? '300px' : '400px', 
-              width: '100%', 
-              borderRadius: '16px', 
-              overflow: 'hidden', 
+            <div style={{
+              height: isMobile ? '300px' : '400px',
+              width: '100%',
+              borderRadius: '16px',
+              overflow: 'hidden',
               boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
               border: '1px solid #eee'
             }}>
