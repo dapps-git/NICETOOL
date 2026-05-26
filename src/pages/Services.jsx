@@ -47,8 +47,8 @@ const Services = () => {
       name: lang === 'en' ? 'Tooling, Dies & Molds' : 'الأدوات والقوالب',
       tagline: lang === 'en' ? 'Mold Manufacturing & Repair Specialists' : 'متخصصون في تصنيع القوالب وإصلاحها',
       desc: lang === 'en'
-        ? 'NICETOOL specializes in injection mold repair, press tools, progressive dies, and jig & fixture manufacturing. There is always a possibility that a mold can break or wear prematurely — we fix it. Includes ECN-based engineering change support.'
-        : 'تتخصص NICETOOL في إصلاح قوالب الحقن وأدوات الضغط والقوالب التقدمية وتصنيع الوصلات والمثبتات. دائمًا ما تتعرض القوالب للكسر أو التآكل المبكر — نحن نصلحها. يشمل دعم تغيير الهندسة.',
+        ? 'NICE TOOLS specializes in injection mold repair, press tools, progressive dies, and jig & fixture manufacturing. There is always a possibility that a mold can break or wear prematurely — we fix it. Includes ECN-based engineering change support.'
+        : 'تتخصص NICE TOOLS في إصلاح قوالب الحقن وأدوات الضغط والقوالب التقدمية وتصنيع الوصلات والمثبتات. دائمًا ما تتعرض القوالب للكسر أو التآكل المبكر — نحن نصلحها. يشمل دعم تغيير الهندسة.',
       items: lang === 'en'
         ? ['Injection Mold Repair', 'Progressive Dies', 'Press Tools', 'Jig & Fixtures', 'Wirecut & EDM Spark Erosion']
         : ['إصلاح قوالب الحقن', 'القوالب التقدمية', 'أدوات الضغط', 'الوصلات والمثبتات', 'القطع السلكي وتآكل الشرارة']

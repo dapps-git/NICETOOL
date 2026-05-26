@@ -4,6 +4,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import WhatsAppWidget from './components/WhatsAppWidget';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -18,7 +19,9 @@ function App() {
     <LanguageProvider>
       <Router>
         <ScrollToTop />
+        <WhatsAppWidget />
         <div className="app">
+
           <Navbar />
           <main>
             <Routes>

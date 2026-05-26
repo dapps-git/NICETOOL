@@ -35,33 +35,33 @@ const Contact = () => {
           }}>
             {/* Contact Info */}
             <div>
-              <h2 style={{ fontSize: '26px', marginBottom: '40px' }}>{t.getInTouch}</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                <div style={{ display: 'flex', gap: '20px' }}>
-                  <div style={{ color: 'var(--primary)', marginTop: '5px' }}><MapPin size={22} /></div>
+              <h2 style={{ fontSize: '22px', marginBottom: '25px' }}>{t.getInTouch}</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+                <div style={{ display: 'flex', gap: '15px' }}>
+                  <div style={{ color: 'var(--primary)', marginTop: '4px' }}><MapPin size={18} /></div>
                   <div>
-                    <h4 style={{ marginBottom: '5px', fontSize: '17px' }}>{t.officeAddress}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '15px', lineHeight: 1.6 }}>
+                    <h4 style={{ marginBottom: '3px', fontSize: '15px' }}>{t.officeAddress}</h4>
+                    <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.5 }}>
                       Jeddah - Al-Jawhara Dist.<br />
                       Near Al-Jawhara Petrol Station<br />
                       P.O.Box 126002 - Jeddah 21352
                     </p>
                   </div>
                 </div>
-                <div style={{ display: 'flex', gap: '20px' }}>
-                  <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Phone size={22} /></div>
+                <div style={{ display: 'flex', gap: '15px' }}>
+                  <div style={{ color: 'var(--primary)', marginTop: '4px' }}><Phone size={18} /></div>
                   <div>
-                    <h4 style={{ marginBottom: '5px', fontSize: '17px' }}>{t.phone}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '15px' }}>
-                      <a href="tel:+966541802013" style={{ color: 'inherit' }}>054 180 2013</a>
+                    <h4 style={{ marginBottom: '3px', fontSize: '15px' }}>{t.phone}</h4>
+                    <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
+                      <a href="tel:+966541802013" className="highlight-phone">054 180 2013</a>
                     </p>
                   </div>
                 </div>
-                <div style={{ display: 'flex', gap: '20px' }}>
-                  <div style={{ color: 'var(--primary)', marginTop: '5px' }}><Mail size={22} /></div>
+                <div style={{ display: 'flex', gap: '15px' }}>
+                  <div style={{ color: 'var(--primary)', marginTop: '4px' }}><Mail size={18} /></div>
                   <div>
-                    <h4 style={{ marginBottom: '5px', fontSize: '17px' }}>{t.emailInquiry}</h4>
-                    <p style={{ color: 'var(--grey)', fontSize: '15px' }}>
+                    <h4 style={{ marginBottom: '3px', fontSize: '15px' }}>{t.emailInquiry}</h4>
+                    <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
                       <a href="mailto:info@nicetoolsa.com" style={{ color: 'inherit' }}>info@nicetoolsa.com</a>
                     </p>
                   </div>
