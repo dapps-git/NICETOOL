@@ -9,7 +9,7 @@ const Footer = () => {
   const t = translations[lang];
 
   return (
-    <footer className="footer" dir="ltr">
+    <footer className="footer montserrat-font" dir="ltr">
       <div className="container">
         <div className="footer-grid" style={{ textAlign: lang === 'ar' ? 'right' : 'left' }}>
           <div className="footer-col">
@@ -38,14 +38,14 @@ const Footer = () => {
           <div className="footer-col">
             <h4>{t.getInTouch}</h4>
             <div style={{ fontSize: '14.5px', color: '#bbb', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <p><strong>{t.officeAddress}:</strong><br /> Jeddah - Al-Jawhara Dist. - P.O.Box 126002</p>
-              <p><strong>{t.phone}:</strong><br /> <a href="tel:+966541802013" className="highlight-phone">054 180 2013</a></p>
+              <p><strong>{t.officeAddress}:</strong><br /> {t.footerAddress}</p>
+              <p><strong>{t.phone}:</strong><br /> <a href="tel:+966541802013" className="highlight-phone">{t.phoneNumber}</a></p>
               <p><strong>{t.emailInquiry}:</strong><br /> <a href="mailto:info@nicetoolsa.com" style={{ color: 'inherit', textDecoration: 'none' }}>info@nicetoolsa.com</a></p>
             </div>
           </div>
         </div>
         <div className="footer-bottom" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '12px', marginTop: '40px' }}>
-          <p style={{ fontSize: '14px', color: '#bbb' }}>&copy; 2026 NICE TOOLS | Advanced Professional Maintenance Est.</p>
+          <p style={{ fontSize: '14px', color: '#bbb' }}>{t.copyright}</p>
           <div className="footer-legal">
             <Link to="#" style={{ margin: '0 12px', color: '#888', fontSize: '13px' }}>{t.privacyPolicy}</Link>
             <Link to="#" style={{ margin: '0 12px', color: '#888', fontSize: '13px' }}>{t.termsOfService}</Link>

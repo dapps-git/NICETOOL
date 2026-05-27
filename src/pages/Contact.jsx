@@ -16,7 +16,7 @@ const Contact = () => {
   }, [lang]);
 
   return (
-    <div className="contact-page page-fade">
+    <div className="contact-page page-fade montserrat-font">
       {/* Header */}
       <section className="sub-hero">
         <div className="container text-center">
@@ -42,9 +42,9 @@ const Contact = () => {
                   <div>
                     <h4 style={{ marginBottom: '3px', fontSize: '15px' }}>{t.officeAddress}</h4>
                     <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.5 }}>
-                      Jeddah - Al-Jawhara Dist.<br />
-                      Near Al-Jawhara Petrol Station<br />
-                      P.O.Box 126002 - Jeddah 21352
+                      {t.addressLine1}<br />
+                      {t.addressLine2}<br />
+                      {t.addressLine3}
                     </p>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ const Contact = () => {
                   <div>
                     <h4 style={{ marginBottom: '3px', fontSize: '15px' }}>{t.phone}</h4>
                     <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
-                      <a href="tel:+966541802013" className="highlight-phone">054 180 2013</a>
+                      <a href="tel:+966541802013" className="highlight-phone">{t.phoneNumber}</a>
                     </p>
                   </div>
                 </div>

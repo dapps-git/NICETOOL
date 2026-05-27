@@ -106,7 +106,10 @@ const Industries = () => {
             {lang === 'en' ? 'Technical Excellence Standards' : 'معايير التميز التقني'}
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-            {['ISO 9001:2015', 'ASME BPVC', 'ANSI / ASQ'].map((std, i) => (
+            {(lang === 'ar'
+              ? ['آي إس إيه 9001:2015', 'إيه إس إم إي بي بي في سي', 'آنسي / آي إس كيو']
+              : ['ISO 9001:2015', 'ASME BPVC', 'ANSI / ASQ']
+            ).map((std, i) => (
               <div key={i} style={{ 
                 padding: '15px 30px', 
                 border: '1px solid var(--primary)', 

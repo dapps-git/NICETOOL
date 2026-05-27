@@ -82,6 +82,8 @@ const Home = () => {
           zIndex: 1
         }}></div>
         <div className="container hero-content" style={{ position: 'relative', zIndex: 10 }}>
+          {/* CNC, ISO/ASME/ANSI centered badge */}
+
           <h1 style={{
             fontSize: 'clamp(1.3rem, 4vw, 2.5rem)',
             color: '#fff',
@@ -94,6 +96,7 @@ const Home = () => {
             </span><br />
             <span className="typewriter delay-2">{t.quality}</span>
           </h1>
+
           <p style={{
             fontSize: '18px',
             color: '#eee',
@@ -312,8 +315,7 @@ const Home = () => {
             marginBottom: isMobile ? '30px' : '50px'
           }}>
             {[
-              { id: 1, name: t.client1, img: img1 },
-              { id: 2, name: t.client2, img: img2 },
+
               { id: 3, name: t.client3, img: img3 },
               { id: 4, name: t.client4, img: img4 },
               { id: 5, name: t.client5, img: img5 },
@@ -352,7 +354,7 @@ const Home = () => {
       </section>
 
       {/* Contact & Map Section */}
-      <section className="section" style={{ background: '#fff', borderTop: '1px solid #eee' }}>
+      <section className="section montserrat-font" style={{ background: '#fff', borderTop: '1px solid #eee' }}>
         <div className="container">
           <div style={{
             display: 'grid',
@@ -369,9 +371,9 @@ const Home = () => {
                   <div>
                     <h4 style={{ marginBottom: '3px', fontSize: '15px', fontWeight: 700 }}>{t.officeAddress}</h4>
                     <p style={{ color: 'var(--grey)', fontSize: '14px', lineHeight: 1.5 }}>
-                      Jeddah - Al-Jawhara Dist.<br />
-                      Near Al-Jawhara Petrol Station<br />
-                      P.O.Box 126002 - Jeddah 21352
+                      {t.addressLine1}<br />
+                      {t.addressLine2}<br />
+                      {t.addressLine3}
                     </p>
                   </div>
                 </div>
@@ -380,7 +382,7 @@ const Home = () => {
                   <div>
                     <h4 style={{ marginBottom: '3px', fontSize: '15px', fontWeight: 700 }}>{t.phone}</h4>
                     <p style={{ color: 'var(--grey)', fontSize: '14px' }}>
-                      <a href="tel:+966541802013" className="highlight-phone">054 180 2013</a>
+                      <a href="tel:+966541802013" className="highlight-phone">{t.phoneNumber}</a>
                     </p>
                   </div>
                 </div>

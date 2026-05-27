@@ -1,5 +1,5 @@
 /* --- Design System --- */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Outfit:wght@400;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     --primary: #E36C09;
@@ -34,7 +34,8 @@ body {
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    font-size: 18px; /* Balanced base size */
+    font-size: 18px;
+    /* Balanced base size */
     font-weight: 500;
     line-height: 1.6;
 }
@@ -49,7 +50,8 @@ h3,
 h4,
 .btn {
     font-family: 'Cormorant Garamond', serif;
-    font-weight: 700; /* Bolder headings kept */
+    font-weight: 700;
+    /* Bolder headings kept */
 }
 
 a {
@@ -165,7 +167,8 @@ img {
 }
 
 .navbar-transparent .logo img {
-    mix-blend-mode: normal; /* Restore colorful logo */
+    mix-blend-mode: normal;
+    /* Restore colorful logo */
 }
 
 .navbar-scrolled {
@@ -194,7 +197,7 @@ img {
 .logo img {
     height: 120px;
     transition: var(--transition);
-    mix-blend-mode: screen; 
+    mix-blend-mode: screen;
     display: block;
 }
 
@@ -206,7 +209,8 @@ img {
 .nav-links a {
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 15px; /* Aligned from 16px */
+    font-size: 15px;
+    /* Aligned from 16px */
     letter-spacing: 0.8px;
     transition: var(--transition);
 }
@@ -226,7 +230,7 @@ img {
     left: 0;
     background: #fff;
     min-width: 200px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
@@ -263,12 +267,12 @@ img {
 }
 
 .navbar-transparent .dropdown-menu {
-    background: rgba(0,0,0,0.95);
+    background: rgba(0, 0, 0, 0.95);
 }
 
 .navbar-transparent .dropdown-menu a {
     color: #fff !important;
-    border-bottom-color: rgba(255,255,255,0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Mobile dropdown adjustment */
@@ -283,9 +287,11 @@ img {
         padding-left: 20px;
         display: none;
     }
+
     .dropdown:hover .dropdown-menu {
         display: flex;
     }
+
     .dropdown-menu a {
         color: #fff !important;
         font-size: 18px !important;
@@ -318,8 +324,10 @@ img {
 }
 
 .mobile-toggle .bar {
-    width: 32px; /* Increased from 25px */
-    height: 3px; /* Increased from 2px */
+    width: 32px;
+    /* Increased from 25px */
+    height: 3px;
+    /* Increased from 2px */
     background: #fff;
     transition: var(--transition);
 }
@@ -398,7 +406,7 @@ img {
         border-right: none;
         animation: typing 2s steps(40, end) forwards;
     }
-    
+
     .hero-stats {
         width: 95%;
         max-width: 500px;
@@ -407,11 +415,11 @@ img {
         justify-content: space-between;
         gap: 10px;
     }
-    
+
     .stat-value {
         font-size: 22px;
     }
-    
+
     .stat-label {
         font-size: 9px;
         letter-spacing: 1px;
@@ -508,8 +516,13 @@ img {
 }
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
 }
 
 @keyframes revealText {
@@ -517,15 +530,24 @@ img {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.delay-1 { animation-delay: 0.5s; }
-.delay-2 { animation-delay: 2.5s; }
-.delay-3 { animation-delay: 4.5s; }
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 2.5s;
+}
+
+.delay-3 {
+    animation-delay: 4.5s;
+}
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
@@ -547,7 +569,7 @@ img {
 
     .logo img {
         height: 100px;
-        margin-left: 5px; 
+        margin-left: 5px;
     }
 
     .nav-links {
@@ -579,7 +601,7 @@ img {
         letter-spacing: 2px;
         transition: 0.3s;
     }
-    
+
     .nav-links a:hover {
         color: var(--primary) !important;
     }
@@ -629,8 +651,8 @@ img {
     }
 
     /* Global Mobile Font Size Reduction (Excluding Hero) */
-    body:not(.hero-page) h1, 
-    section:not(.hero) h2, 
+    body:not(.hero-page) h1,
+    section:not(.hero) h2,
     section:not(.hero) h3,
     .sub-hero h1 {
         font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
@@ -639,7 +661,8 @@ img {
     section:not(.hero) p,
     .partner-card p,
     .client-card-home p {
-        font-size: 15px !important; /* Balanced mobile text */
+        font-size: 15px !important;
+        /* Balanced mobile text */
         line-height: 1.6 !important;
     }
 
@@ -651,10 +674,12 @@ img {
     .capabilities-grid {
         gap: 30px !important;
     }
+
     .capabilities-grid h3 {
         font-size: 1.2rem !important;
         margin-bottom: 15px !important;
     }
+
     .capabilities-grid .process-item {
         font-size: 12px !important;
     }
@@ -664,16 +689,16 @@ img {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 15px !important;
     }
-    
+
     .mobile-2-col .partner-card,
     .mobile-2-col .client-card-home {
         padding: 20px 10px !important;
     }
-    
+
     .mobile-2-col img {
         max-height: 40px !important;
     }
-    
+
     .mobile-2-col h3 {
         font-size: 13px !important;
     }
@@ -696,15 +721,16 @@ img {
         justify-content: center;
         min-height: 45px;
     }
-.industry-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary) !important;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
 
-.industry-card:hover h3 {
-    color: var(--primary);
-}
+    .industry-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary) !important;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .industry-card:hover h3 {
+        color: var(--primary);
+    }
 
     .hero-content div[style*="display: flex"] {
         gap: 10px !important;
@@ -814,9 +840,11 @@ img {
         transform: scale(0.95);
         opacity: 0.5;
     }
+
     50% {
         opacity: 0.3;
     }
+
     100% {
         transform: scale(1.35);
         opacity: 0;
@@ -831,11 +859,86 @@ img {
         width: 50px;
         height: 50px;
     }
+
     .whatsapp-float svg {
         width: 26px;
         height: 26px;
     }
+
     .whatsapp-tooltip {
         display: none;
     }
+}
+
+/* --- Montserrat Font Utility --- */
+.montserrat-font,
+.montserrat-font * {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important; /* Regular weight */
+}
+
+/* Headers slightly more defined but still clean */
+.montserrat-font h1,
+.montserrat-font h2,
+.montserrat-font h3,
+.montserrat-font h4,
+.montserrat-font strong,
+.montserrat-font b,
+.montserrat-font button {
+    font-weight: 600 !important; /* SemiBold for headers */
+}
+
+/* Reduce font sizes in footer and contact sections */
+.montserrat-font p,
+.montserrat-font li,
+.montserrat-font a,
+.montserrat-font span,
+.montserrat-font label {
+    font-size: 13px !important; /* Reduced font size */
+}
+
+/* Adjust heading sizes */
+.montserrat-font h1 {
+    font-size: clamp(1.4rem, 4vw, 2.2rem) !important;
+}
+.montserrat-font h2 {
+    font-size: 18px !important; /* Reduced h2 size */
+}
+.montserrat-font h3 {
+    font-size: 16px !important;
+}
+.montserrat-font h4 {
+    font-size: 13.5px !important;
+}
+
+/* Keep form inputs slightly larger for usability but still scaled down */
+.montserrat-font input,
+.montserrat-font textarea {
+    font-size: 13.5px !important;
+}
+
+/* --- Language Direction (RTL for Arabic) --- */
+.lang-ar {
+    direction: rtl;
+}
+
+/* Except Navbar and Hero Section, which must remain LTR */
+.lang-ar nav.navbar,
+.lang-ar section.hero,
+.lang-ar .hero,
+.lang-ar .navbar {
+    direction: ltr !important;
+}
+
+/* Flip directional icons in Arabic RTL mode */
+.lang-ar svg.lucide-arrow-left,
+.lang-ar svg.lucide-chevron-right,
+.lang-ar svg.lucide-chevron-left {
+    transform: scaleX(-1);
+}
+
+/* Mirror Brand Accent Left Borders to Right in RTL mode */
+.lang-ar [style*="border-left"] {
+    border-left: none !important;
+    border-right: 5px solid var(--primary) !important;
 }

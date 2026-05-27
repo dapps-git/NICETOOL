@@ -38,8 +38,7 @@ const Clients = () => {
   }, [lang]);
 
   const partners = [
-    { img: img1, name: t.client1, },
-    { img: img2, name: t.client2, },
+
     { img: img3, name: t.client3, },
     { img: img4, name: t.client4, },
     { img: img5, name: t.client5, },
