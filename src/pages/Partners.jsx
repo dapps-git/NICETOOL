@@ -45,7 +45,7 @@ const Clients = () => {
     { img: img6, name: t.client6, },
     { img: img7, name: t.client7, },
     { img: img8, name: t.client8, },
-    { img: img9, name: t.client9, },
+
     { img: img10, name: t.client10, },
     { img: img11, name: t.client11, },
     { img: img12, name: t.client12, },
