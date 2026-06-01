@@ -321,7 +321,10 @@ const Home = () => {
               { id: 5, name: t.client5, img: img5 },
               { id: 6, name: t.client6, img: img6 },
               { id: 7, name: t.client7, img: img7 },
-              { id: 8, name: t.client8, img: img8 }
+
+              { id: 8, name: t.client8, img: img8 },
+
+
             ].map((client) => (
               <div key={client.id} style={{
                 background: '#fff',
